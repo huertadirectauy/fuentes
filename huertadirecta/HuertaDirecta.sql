@@ -1,201 +1,401 @@
-if exists(SELECT * FROM DBO.SYSDATABASES WHERE NAME = 'HuertaDirecta')  
-BEGIN 
-DROP DATABASE HuertaDirecta 
-END 
-GO 
-create database HuertaDirecta 
-GO 
-use HuertaDirecta 
-GO 
-CREATE TABLE Usuario( 
-usuario Varchar(100), 
-password Varchar(30), 
-fechaAlta DateTime, 
-estado Int 
- ,CONSTRAINT PK_Usuario PRIMARY KEY ( usuario) 
-) 
- 
-GO 
-CREATE PROCEDURE UsuarioLeer 
+USE HuertaDirecta
+GO
+
+IF OBJECT_ID ('dbo.barrio') IS NOT NULL
+	DROP TABLE dbo.barrio
+GO
+
+IF OBJECT_ID ('dbo.calle') IS NOT NULL
+	DROP TABLE dbo.calle
+GO
+
+IF OBJECT_ID ('dbo.categoria') IS NOT NULL
+	DROP TABLE dbo.categoria
+GO
+
+IF OBJECT_ID ('dbo.ciudad') IS NOT NULL
+	DROP TABLE dbo.ciudad
+GO
+
+IF OBJECT_ID ('dbo.direccion') IS NOT NULL
+	DROP TABLE dbo.direccion
+GO
+
+IF OBJECT_ID ('dbo.imagen') IS NOT NULL
+	DROP TABLE dbo.imagen
+GO
+
+IF OBJECT_ID ('dbo.moneda') IS NOT NULL
+	DROP TABLE dbo.moneda
+GO
+
+IF OBJECT_ID ('dbo.Pais') IS NOT NULL
+	DROP TABLE dbo.Pais
+GO
+
+IF OBJECT_ID ('dbo.pedido') IS NOT NULL
+	DROP TABLE dbo.pedido
+GO
+
+IF OBJECT_ID ('dbo.pedidoDetalle') IS NOT NULL
+	DROP TABLE dbo.pedidoDetalle
+GO
+
+IF OBJECT_ID ('dbo.barrioGuardar') IS NOT NULL
+	DROP PROCEDURE dbo.barrioGuardar
+GO
+
+IF OBJECT_ID ('dbo.barrioLeer') IS NOT NULL
+	DROP PROCEDURE dbo.barrioLeer
+GO
+
+IF OBJECT_ID ('dbo.calleGuardar') IS NOT NULL
+	DROP PROCEDURE dbo.calleGuardar
+GO
+
+IF OBJECT_ID ('dbo.calleLeer') IS NOT NULL
+	DROP PROCEDURE dbo.calleLeer
+GO
+
+IF OBJECT_ID ('dbo.categoriaGuardar') IS NOT NULL
+	DROP PROCEDURE dbo.categoriaGuardar
+GO
+
+IF OBJECT_ID ('dbo.categoriaLeer') IS NOT NULL
+	DROP PROCEDURE dbo.categoriaLeer
+GO
+
+IF OBJECT_ID ('dbo.ciudadGuardar') IS NOT NULL
+	DROP PROCEDURE dbo.ciudadGuardar
+GO
+
+IF OBJECT_ID ('dbo.ciudadLeer') IS NOT NULL
+	DROP PROCEDURE dbo.ciudadLeer
+GO
+
+IF OBJECT_ID ('dbo.direccionGuardar') IS NOT NULL
+	DROP PROCEDURE dbo.direccionGuardar
+GO
+
+IF OBJECT_ID ('dbo.direccionLeer') IS NOT NULL
+	DROP PROCEDURE dbo.direccionLeer
+GO
+
+CREATE TABLE dbo.barrio
+	(
+	id       INT NOT NULL,
+	idCiudad INT NOT NULL,
+	nombre   VARCHAR (100) NULL,
+	CONSTRAINT PK_barrio PRIMARY KEY (id, idCiudad)
+	)
+GO
+
+CREATE TABLE dbo.calle
+	(
+	id       INT NOT NULL,
+	idCiudad INT NOT NULL,
+	nombre   VARCHAR (100) NULL,
+	CONSTRAINT PK_calle PRIMARY KEY (id, idCiudad)
+	)
+GO
+
+CREATE TABLE dbo.categoria
+	(
+	id     INT NOT NULL,
+	nombre VARCHAR (100) NULL,
+	CONSTRAINT PK_categoria PRIMARY KEY (id)
+	)
+GO
+
+CREATE TABLE dbo.ciudad
+	(
+	id          INT NOT NULL,
+	idLocalidad INT NOT NULL,
+	nombre      VARCHAR (100) NULL,
+	CONSTRAINT PK_ciudad PRIMARY KEY (id, idLocalidad)
+	)
+GO
+
+CREATE TABLE dbo.direccion
+	(
+	id                 INT NOT NULL,
+	latitud            INT NULL,
+	longitud           INT NULL,
+	manzana            VARCHAR (10) NULL,
+	solar              VARCHAR (10) NULL,
+	apto               VARCHAR (10) NULL,
+	numero             VARCHAR (10) NULL,
+	codigoCalle        INT NULL,
+	codigoCalleEsquina INT NULL,
+	localidad          INT NULL,
+	codigoCiudad       INT NULL,
+	codigoProvincia    INT NULL,
+	codigoPais         INT NULL,
+	CONSTRAINT PK_direccion PRIMARY KEY (id)
+	)
+GO
+
+CREATE TABLE dbo.imagen
+	(
+	id     INT NOT NULL,
+	imagen VARCHAR (100) NULL,
+	CONSTRAINT PK_imagen PRIMARY KEY (id)
+	)
+GO
+
+CREATE TABLE dbo.moneda
+	(
+	id     INT NOT NULL,
+	nombre VARCHAR (100) NULL,
+	CONSTRAINT PK_moneda PRIMARY KEY (id)
+	)
+GO
+
+CREATE TABLE dbo.Pais
+	(
+	id     INT NOT NULL,
+	nombre VARCHAR (100) NULL,
+	CONSTRAINT PK_Pais PRIMARY KEY (id)
+	)
+GO
+
+CREATE TABLE dbo.pedido
+	(
+	id                    INT NOT NULL,
+	idPersonaDestinatario INT NULL,
+	moneda                INT NULL,
+	monto                 DECIMAL (18) NULL,
+	estado                INT NULL,
+	CONSTRAINT PK_pedido PRIMARY KEY (id)
+	)
+GO
+
+CREATE TABLE dbo.pedidoDetalle
+	(
+	idPedido    INT NOT NULL,
+	idItem      INT NOT NULL,
+	idProducto  INT NULL,
+	idProductor INT NULL,
+	CONSTRAINT PK_pedidoDetalle PRIMARY KEY (idPedido, idItem)
+	)
+GO
+
+ALTER PROCEDURE barrioGuardar 
 ( 
-@usuario Varchar(100), 
-@password Varchar(30), 
-@fechaAlta DateTime, 
-@estado Int 
+@id Int, 
+@idCiudad Int, 
+@nombre Varchar(100) 
 ) 
  
 AS 
-SELECT 
-usuario, 
-password, 
-fechaAlta, 
-estado 
- 
-FROM Usuario 
- WHERE 
-((usuario = @usuario) or (@usuario is null)) and 
-((password = @password) or (@password is null)) and 
-((fechaAlta = @fechaAlta) or (@fechaAlta is null)) and 
-((estado = @estado) or (@estado is null))  
- 
- 
-GO 
-CREATE PROCEDURE UsuarioGuardar 
-( 
-@usuario Varchar(100), 
-@password Varchar(30), 
-@fechaAlta DateTime, 
-@estado Int 
-) 
- 
-AS 
-update Usuario SET  
-usuario=@usuario,  
-password=@password,  
-fechaAlta=@fechaAlta,  
-estado=@estado  
+update barrio SET  
+id=@id,  
+idCiudad=@idCiudad,  
+nombre=@nombre  
  
  WHERE 
-usuario = @usuario  
+id = @id and 
+idCiudad = @idCiudad  
  
 IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
  
-GO 
- 
-CREATE TABLE Persona( 
-id Int, 
-primerNombre Varchar(100), 
-segundoNombre Varchar(100), 
-primerApellido Varchar(100), 
-segundoApellido Varchar(100), 
-tipoDocumento Int, 
-numeroDocumento Varchar(30), 
-email Varchar(30), 
-telefonoFijo Varchar(30), 
-telefonoMovil Varchar(30), 
-fechaAlta DateTime, 
-fechaBaja DateTime, 
-estado Int, 
-calificacion Int 
- ,CONSTRAINT PK_Persona PRIMARY KEY ( id) 
-) 
- 
-GO 
-CREATE PROCEDURE PersonaLeer 
+
+GO
+
+ALTER PROCEDURE barrioLeer 
 ( 
 @id Int, 
-@primerNombre Varchar(100), 
-@segundoNombre Varchar(100), 
-@primerApellido Varchar(100), 
-@segundoApellido Varchar(100), 
-@tipoDocumento Int, 
-@numeroDocumento Varchar(30), 
-@email Varchar(30), 
-@telefonoFijo Varchar(30), 
-@telefonoMovil Varchar(30), 
-@fechaAlta DateTime, 
-@fechaBaja DateTime, 
-@estado Int, 
-@calificacion Int 
+@idCiudad Int, 
+@nombre Varchar(100) 
 ) 
  
 AS 
 SELECT 
 id, 
-primerNombre, 
-segundoNombre, 
-primerApellido, 
-segundoApellido, 
-tipoDocumento, 
-numeroDocumento, 
-email, 
-telefonoFijo, 
-telefonoMovil, 
-fechaAlta, 
-fechaBaja, 
-estado, 
-calificacion 
+idCiudad, 
+nombre 
  
-FROM Persona 
+FROM barrio 
  WHERE 
 ((id = @id) or (@id is null)) and 
-((primerNombre = @primerNombre) or (@primerNombre is null)) and 
-((segundoNombre = @segundoNombre) or (@segundoNombre is null)) and 
-((primerApellido = @primerApellido) or (@primerApellido is null)) and 
-((segundoApellido = @segundoApellido) or (@segundoApellido is null)) and 
-((tipoDocumento = @tipoDocumento) or (@tipoDocumento is null)) and 
-((numeroDocumento = @numeroDocumento) or (@numeroDocumento is null)) and 
-((email = @email) or (@email is null)) and 
-((telefonoFijo = @telefonoFijo) or (@telefonoFijo is null)) and 
-((telefonoMovil = @telefonoMovil) or (@telefonoMovil is null)) and 
-((fechaAlta = @fechaAlta) or (@fechaAlta is null)) and 
-((fechaBaja = @fechaBaja) or (@fechaBaja is null)) and 
-((estado = @estado) or (@estado is null)) and 
-((calificacion = @calificacion) or (@calificacion is null))  
+((idCiudad = @idCiudad) or (@idCiudad is null)) and 
+((nombre = @nombre) or (@nombre is null))  
  
  
-GO 
-CREATE PROCEDURE PersonaGuardar 
+
+GO
+
+ALTER PROCEDURE calleGuardar 
 ( 
 @id Int, 
-@primerNombre Varchar(100), 
-@segundoNombre Varchar(100), 
-@primerApellido Varchar(100), 
-@segundoApellido Varchar(100), 
-@tipoDocumento Int, 
-@numeroDocumento Varchar(30), 
-@email Varchar(30), 
-@telefonoFijo Varchar(30), 
-@telefonoMovil Varchar(30), 
-@fechaAlta DateTime, 
-@fechaBaja DateTime, 
-@estado Int, 
-@calificacion Int 
+@idCiudad Int, 
+@nombre Varchar(100) 
 ) 
  
 AS 
-update Persona SET  
+update calle SET  
 id=@id,  
-primerNombre=@primerNombre,  
-segundoNombre=@segundoNombre,  
-primerApellido=@primerApellido,  
-segundoApellido=@segundoApellido,  
-tipoDocumento=@tipoDocumento,  
-numeroDocumento=@numeroDocumento,  
-email=@email,  
-telefonoFijo=@telefonoFijo,  
-telefonoMovil=@telefonoMovil,  
-fechaAlta=@fechaAlta,  
-fechaBaja=@fechaBaja,  
-estado=@estado,  
-calificacion=@calificacion  
+idCiudad=@idCiudad,  
+nombre=@nombre  
+ 
+ WHERE 
+id = @id and 
+idCiudad = @idCiudad  
+ 
+IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
+ 
+
+GO
+
+ALTER PROCEDURE calleLeer 
+( 
+@id Int, 
+@idCiudad Int, 
+@nombre Varchar(100) 
+) 
+ 
+AS 
+SELECT 
+id, 
+idCiudad, 
+nombre 
+ 
+FROM calle 
+ WHERE 
+((id = @id) or (@id is null)) and 
+((idCiudad = @idCiudad) or (@idCiudad is null)) and 
+((nombre = @nombre) or (@nombre is null))  
+ 
+ 
+
+GO
+
+ALTER PROCEDURE categoriaGuardar 
+( 
+@id Int, 
+@nombre Varchar(100) 
+) 
+ 
+AS 
+update categoria SET  
+id=@id,  
+nombre=@nombre  
  
  WHERE 
 id = @id  
  
 IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
  
-GO 
- 
-CREATE TABLE direccion( 
-id Int, 
-latitud Int, 
-longitud Int, 
-manzana Varchar(10), 
-solar Varchar(10), 
-apto Varchar(10), 
-numero Varchar(10), 
-codigoCalle Int, 
-codigoCalleEsquina Int, 
-localidad Int, 
-codigoCiudad Int, 
-codigoProvincia Int, 
-codigoPais Int 
- ,CONSTRAINT PK_direccion PRIMARY KEY ( id) 
+
+GO
+
+ALTER PROCEDURE categoriaLeer 
+( 
+@id Int, 
+@nombre Varchar(100) 
 ) 
  
-GO 
-CREATE PROCEDURE direccionLeer 
+AS 
+SELECT 
+id, 
+nombre 
+ 
+FROM categoria 
+ WHERE 
+((id = @id) or (@id is null)) and 
+((nombre = @nombre) or (@nombre is null))  
+ 
+ 
+
+GO
+
+ALTER PROCEDURE ciudadGuardar 
+( 
+@id Int, 
+@idLocalidad Int, 
+@nombre Varchar(100) 
+) 
+ 
+AS 
+update ciudad SET  
+id=@id,  
+idLocalidad=@idLocalidad,  
+nombre=@nombre  
+ 
+ WHERE 
+id = @id and 
+idLocalidad = @idLocalidad  
+ 
+IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
+ 
+
+GO
+
+ALTER PROCEDURE ciudadLeer 
+( 
+@id Int, 
+@idLocalidad Int, 
+@nombre Varchar(100) 
+) 
+ 
+AS 
+SELECT 
+id, 
+idLocalidad, 
+nombre 
+ 
+FROM ciudad 
+ WHERE 
+((id = @id) or (@id is null)) and 
+((idLocalidad = @idLocalidad) or (@idLocalidad is null)) and 
+((nombre = @nombre) or (@nombre is null))  
+ 
+ 
+
+GO
+
+ALTER PROCEDURE direccionGuardar 
+( 
+@id Int, 
+@latitud Int, 
+@longitud Int, 
+@manzana Varchar(10), 
+@solar Varchar(10), 
+@apto Varchar(10), 
+@numero Varchar(10), 
+@codigoCalle Int, 
+@codigoCalleEsquina Int, 
+@localidad Int, 
+@codigoCiudad Int, 
+@codigoProvincia Int, 
+@codigoPais Int 
+) 
+ 
+AS 
+update direccion SET  
+id=@id,  
+latitud=@latitud,  
+longitud=@longitud,  
+manzana=@manzana,  
+solar=@solar,  
+apto=@apto,  
+numero=@numero,  
+codigoCalle=@codigoCalle,  
+codigoCalleEsquina=@codigoCalleEsquina,  
+localidad=@localidad,  
+codigoCiudad=@codigoCiudad,  
+codigoProvincia=@codigoProvincia,  
+codigoPais=@codigoPais  
+ 
+ WHERE 
+id = @id  
+ 
+IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
+ 
+
+GO
+
+ALTER PROCEDURE direccionLeer 
 ( 
 @id Int, 
 @latitud Int, 
@@ -245,767 +445,6 @@ FROM direccion
 ((codigoPais = @codigoPais) or (@codigoPais is null))  
  
  
-GO 
-CREATE PROCEDURE direccionGuardar 
-( 
-@id Int, 
-@latitud Int, 
-@longitud Int, 
-@manzana Varchar(10), 
-@solar Varchar(10), 
-@apto Varchar(10), 
-@numero Varchar(10), 
-@codigoCalle Int, 
-@codigoCalleEsquina Int, 
-@localidad Int, 
-@codigoCiudad Int, 
-@codigoProvincia Int, 
-@codigoPais Int 
-) 
- 
-AS 
-update direccion SET  
-id=@id,  
-latitud=@latitud,  
-longitud=@longitud,  
-manzana=@manzana,  
-solar=@solar,  
-apto=@apto,  
-numero=@numero,  
-codigoCalle=@codigoCalle,  
-codigoCalleEsquina=@codigoCalleEsquina,  
-localidad=@localidad,  
-codigoCiudad=@codigoCiudad,  
-codigoProvincia=@codigoProvincia,  
-codigoPais=@codigoPais  
- 
- WHERE 
-id = @id  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE Pais( 
-id Int, 
-nombre Varchar(100) 
- ,CONSTRAINT PK_Pais PRIMARY KEY ( id) 
-) 
- 
-GO 
-CREATE PROCEDURE PaisLeer 
-( 
-@id Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-SELECT 
-id, 
-nombre 
- 
-FROM Pais 
- WHERE 
-((id = @id) or (@id is null)) and 
-((nombre = @nombre) or (@nombre is null))  
- 
- 
-GO 
-CREATE PROCEDURE PaisGuardar 
-( 
-@id Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-update Pais SET  
-id=@id,  
-nombre=@nombre  
- 
- WHERE 
-id = @id  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE provincia( 
-id Int, 
-idPais Int, 
-nombre Varchar(100) 
- ,CONSTRAINT PK_provincia PRIMARY KEY ( id,idPais) 
-) 
- 
-GO 
-CREATE PROCEDURE provinciaLeer 
-( 
-@id Int, 
-@idPais Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-SELECT 
-id, 
-idPais, 
-nombre 
- 
-FROM provincia 
- WHERE 
-((id = @id) or (@id is null)) and 
-((idPais = @idPais) or (@idPais is null)) and 
-((nombre = @nombre) or (@nombre is null))  
- 
- 
-GO 
-CREATE PROCEDURE provinciaGuardar 
-( 
-@id Int, 
-@idPais Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-update provincia SET  
-id=@id,  
-idPais=@idPais,  
-nombre=@nombre  
- 
- WHERE 
-id = @id and 
-idPais = @idPais  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE ciudad( 
-id Int, 
-idLocalidad Int, 
-nombre Varchar(100) 
- ,CONSTRAINT PK_ciudad PRIMARY KEY ( id,idLocalidad) 
-) 
- 
-GO 
-CREATE PROCEDURE ciudadLeer 
-( 
-@id Int, 
-@idLocalidad Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-SELECT 
-id, 
-idLocalidad, 
-nombre 
- 
-FROM ciudad 
- WHERE 
-((id = @id) or (@id is null)) and 
-((idLocalidad = @idLocalidad) or (@idLocalidad is null)) and 
-((nombre = @nombre) or (@nombre is null))  
- 
- 
-GO 
-CREATE PROCEDURE ciudadGuardar 
-( 
-@id Int, 
-@idLocalidad Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-update ciudad SET  
-id=@id,  
-idLocalidad=@idLocalidad,  
-nombre=@nombre  
- 
- WHERE 
-id = @id and 
-idLocalidad = @idLocalidad  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE barrio( 
-id Int, 
-idCiudad Int, 
-nombre Varchar(100) 
- ,CONSTRAINT PK_barrio PRIMARY KEY ( id,idCiudad) 
-) 
- 
-GO 
-CREATE PROCEDURE barrioLeer 
-( 
-@id Int, 
-@idCiudad Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-SELECT 
-id, 
-idCiudad, 
-nombre 
- 
-FROM barrio 
- WHERE 
-((id = @id) or (@id is null)) and 
-((idCiudad = @idCiudad) or (@idCiudad is null)) and 
-((nombre = @nombre) or (@nombre is null))  
- 
- 
-GO 
-CREATE PROCEDURE barrioGuardar 
-( 
-@id Int, 
-@idCiudad Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-update barrio SET  
-id=@id,  
-idCiudad=@idCiudad,  
-nombre=@nombre  
- 
- WHERE 
-id = @id and 
-idCiudad = @idCiudad  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE calle( 
-id Int, 
-idCiudad Int, 
-nombre Varchar(100) 
- ,CONSTRAINT PK_calle PRIMARY KEY ( id,idCiudad) 
-) 
- 
-GO 
-CREATE PROCEDURE calleLeer 
-( 
-@id Int, 
-@idCiudad Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-SELECT 
-id, 
-idCiudad, 
-nombre 
- 
-FROM calle 
- WHERE 
-((id = @id) or (@id is null)) and 
-((idCiudad = @idCiudad) or (@idCiudad is null)) and 
-((nombre = @nombre) or (@nombre is null))  
- 
- 
-GO 
-CREATE PROCEDURE calleGuardar 
-( 
-@id Int, 
-@idCiudad Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-update calle SET  
-id=@id,  
-idCiudad=@idCiudad,  
-nombre=@nombre  
- 
- WHERE 
-id = @id and 
-idCiudad = @idCiudad  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE productor( 
-id Int, 
-idPersona Int, 
-nombreFantasia Varchar(100), 
-descripcion Varchar(100) 
- ,CONSTRAINT PK_productor PRIMARY KEY ( id) 
-) 
- 
-GO 
-CREATE PROCEDURE productorLeer 
-( 
-@id Int, 
-@idPersona Int, 
-@nombreFantasia Varchar(100), 
-@descripcion Varchar(100) 
-) 
- 
-AS 
-SELECT 
-id, 
-idPersona, 
-nombreFantasia, 
-descripcion 
- 
-FROM productor 
- WHERE 
-((id = @id) or (@id is null)) and 
-((idPersona = @idPersona) or (@idPersona is null)) and 
-((nombreFantasia = @nombreFantasia) or (@nombreFantasia is null)) and 
-((descripcion = @descripcion) or (@descripcion is null))  
- 
- 
-GO 
-CREATE PROCEDURE productorGuardar 
-( 
-@id Int, 
-@idPersona Int, 
-@nombreFantasia Varchar(100), 
-@descripcion Varchar(100) 
-) 
- 
-AS 
-update productor SET  
-id=@id,  
-idPersona=@idPersona,  
-nombreFantasia=@nombreFantasia,  
-descripcion=@descripcion  
- 
- WHERE 
-id = @id  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE imagen( 
-id Int, 
-imagen Varchar(100) 
- ,CONSTRAINT PK_imagen PRIMARY KEY ( id) 
-) 
- 
-GO 
-CREATE PROCEDURE imagenLeer 
-( 
-@id Int, 
-@imagen Varchar(100) 
-) 
- 
-AS 
-SELECT 
-id, 
-imagen 
- 
-FROM imagen 
- WHERE 
-((id = @id) or (@id is null)) and 
-((imagen = @imagen) or (@imagen is null))  
- 
- 
-GO 
-CREATE PROCEDURE imagenGuardar 
-( 
-@id Int, 
-@imagen Varchar(100) 
-) 
- 
-AS 
-update imagen SET  
-id=@id,  
-imagen=@imagen  
- 
- WHERE 
-id = @id  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE producto( 
-id Int, 
-idCategoria Int, 
-nombre Varchar(100), 
-descripcion Varchar(5000) 
- ,CONSTRAINT PK_producto PRIMARY KEY ( id,idCategoria) 
-) 
- 
-GO 
-CREATE PROCEDURE productoLeer 
-( 
-@id Int, 
-@idCategoria Int, 
-@nombre Varchar(100), 
-@descripcion Varchar(5000) 
-) 
- 
-AS 
-SELECT 
-id, 
-idCategoria, 
-nombre, 
-descripcion 
- 
-FROM producto 
- WHERE 
-((id = @id) or (@id is null)) and 
-((idCategoria = @idCategoria) or (@idCategoria is null)) and 
-((nombre = @nombre) or (@nombre is null)) and 
-((descripcion = @descripcion) or (@descripcion is null))  
- 
- 
-GO 
-CREATE PROCEDURE productoGuardar 
-( 
-@id Int, 
-@idCategoria Int, 
-@nombre Varchar(100), 
-@descripcion Varchar(5000) 
-) 
- 
-AS 
-update producto SET  
-id=@id,  
-idCategoria=@idCategoria,  
-nombre=@nombre,  
-descripcion=@descripcion  
- 
- WHERE 
-id = @id and 
-idCategoria = @idCategoria  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE categoria( 
-id Int, 
-nombre Varchar(100) 
- ,CONSTRAINT PK_categoria PRIMARY KEY ( id) 
-) 
- 
-GO 
-CREATE PROCEDURE categoriaLeer 
-( 
-@id Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-SELECT 
-id, 
-nombre 
- 
-FROM categoria 
- WHERE 
-((id = @id) or (@id is null)) and 
-((nombre = @nombre) or (@nombre is null))  
- 
- 
-GO 
-CREATE PROCEDURE categoriaGuardar 
-( 
-@id Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-update categoria SET  
-id=@id,  
-nombre=@nombre  
- 
- WHERE 
-id = @id  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE moneda( 
-id Int, 
-nombre Varchar(100) 
- ,CONSTRAINT PK_moneda PRIMARY KEY ( id) 
-) 
- 
-GO 
-CREATE PROCEDURE monedaLeer 
-( 
-@id Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-SELECT 
-id, 
-nombre 
- 
-FROM moneda 
- WHERE 
-((id = @id) or (@id is null)) and 
-((nombre = @nombre) or (@nombre is null))  
- 
- 
-GO 
-CREATE PROCEDURE monedaGuardar 
-( 
-@id Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-update moneda SET  
-id=@id,  
-nombre=@nombre  
- 
- WHERE 
-id = @id  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE tipoUnidad( 
-id Int, 
-nombre Varchar(100) 
- ,CONSTRAINT PK_tipoUnidad PRIMARY KEY ( id) 
-) 
- 
-GO 
-CREATE PROCEDURE tipoUnidadLeer 
-( 
-@id Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-SELECT 
-id, 
-nombre 
- 
-FROM tipoUnidad 
- WHERE 
-((id = @id) or (@id is null)) and 
-((nombre = @nombre) or (@nombre is null))  
- 
- 
-GO 
-CREATE PROCEDURE tipoUnidadGuardar 
-( 
-@id Int, 
-@nombre Varchar(100) 
-) 
- 
-AS 
-update tipoUnidad SET  
-id=@id,  
-nombre=@nombre  
- 
- WHERE 
-id = @id  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE productoProductor( 
-idProducto Int, 
-idProductor Int, 
-descripcion Varchar(100), 
-codigoMoneda Int, 
-precio Decimal, 
-codigoTipoUnidad Int, 
-linkSitio Varchar(100), 
-linkRedSocial Varchar(100) 
- ,CONSTRAINT PK_productoProductor PRIMARY KEY ( idProducto,idProductor) 
-) 
- 
-GO 
-CREATE PROCEDURE productoProductorLeer 
-( 
-@idProducto Int, 
-@idProductor Int, 
-@descripcion Varchar(100), 
-@codigoMoneda Int, 
-@precio Decimal, 
-@codigoTipoUnidad Int, 
-@linkSitio Varchar(100), 
-@linkRedSocial Varchar(100) 
-) 
- 
-AS 
-SELECT 
-idProducto, 
-idProductor, 
-descripcion, 
-codigoMoneda, 
-precio, 
-codigoTipoUnidad, 
-linkSitio, 
-linkRedSocial 
- 
-FROM productoProductor 
- WHERE 
-((idProducto = @idProducto) or (@idProducto is null)) and 
-((idProductor = @idProductor) or (@idProductor is null)) and 
-((descripcion = @descripcion) or (@descripcion is null)) and 
-((codigoMoneda = @codigoMoneda) or (@codigoMoneda is null)) and 
-((precio = @precio) or (@precio is null)) and 
-((codigoTipoUnidad = @codigoTipoUnidad) or (@codigoTipoUnidad is null)) and 
-((linkSitio = @linkSitio) or (@linkSitio is null)) and 
-((linkRedSocial = @linkRedSocial) or (@linkRedSocial is null))  
- 
- 
-GO 
-CREATE PROCEDURE productoProductorGuardar 
-( 
-@idProducto Int, 
-@idProductor Int, 
-@descripcion Varchar(100), 
-@codigoMoneda Int, 
-@precio Decimal, 
-@codigoTipoUnidad Int, 
-@linkSitio Varchar(100), 
-@linkRedSocial Varchar(100) 
-) 
- 
-AS 
-update productoProductor SET  
-idProducto=@idProducto,  
-idProductor=@idProductor,  
-descripcion=@descripcion,  
-codigoMoneda=@codigoMoneda,  
-precio=@precio,  
-codigoTipoUnidad=@codigoTipoUnidad,  
-linkSitio=@linkSitio,  
-linkRedSocial=@linkRedSocial  
- 
- WHERE 
-idProducto = @idProducto and 
-idProductor = @idProductor  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE pedido( 
-id Int, 
-idPersonaDestinatario Int, 
-moneda Int, 
-monto Decimal, 
-estado Int 
- ,CONSTRAINT PK_pedido PRIMARY KEY ( id) 
-) 
- 
-GO 
-CREATE PROCEDURE pedidoLeer 
-( 
-@id Int, 
-@idPersonaDestinatario Int, 
-@moneda Int, 
-@monto Decimal, 
-@estado Int 
-) 
- 
-AS 
-SELECT 
-id, 
-idPersonaDestinatario, 
-moneda, 
-monto, 
-estado 
- 
-FROM pedido 
- WHERE 
-((id = @id) or (@id is null)) and 
-((idPersonaDestinatario = @idPersonaDestinatario) or (@idPersonaDestinatario is null)) and 
-((moneda = @moneda) or (@moneda is null)) and 
-((monto = @monto) or (@monto is null)) and 
-((estado = @estado) or (@estado is null))  
- 
- 
-GO 
-CREATE PROCEDURE pedidoGuardar 
-( 
-@id Int, 
-@idPersonaDestinatario Int, 
-@moneda Int, 
-@monto Decimal, 
-@estado Int 
-) 
- 
-AS 
-update pedido SET  
-id=@id,  
-idPersonaDestinatario=@idPersonaDestinatario,  
-moneda=@moneda,  
-monto=@monto,  
-estado=@estado  
- 
- WHERE 
-id = @id  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
-CREATE TABLE pedidoDetalle( 
-idPedido Int, 
-idItem Int, 
-idProducto Int, 
-idProductor Int 
- ,CONSTRAINT PK_pedidoDetalle PRIMARY KEY ( idPedido,idItem) 
-) 
- 
-GO 
-CREATE PROCEDURE pedidoDetalleLeer 
-( 
-@idPedido Int, 
-@idItem Int, 
-@idProducto Int, 
-@idProductor Int 
-) 
- 
-AS 
-SELECT 
-idPedido, 
-idItem, 
-idProducto, 
-idProductor 
- 
-FROM pedidoDetalle 
- WHERE 
-((idPedido = @idPedido) or (@idPedido is null)) and 
-((idItem = @idItem) or (@idItem is null)) and 
-((idProducto = @idProducto) or (@idProducto is null)) and 
-((idProductor = @idProductor) or (@idProductor is null))  
- 
- 
-GO 
-CREATE PROCEDURE pedidoDetalleGuardar 
-( 
-@idPedido Int, 
-@idItem Int, 
-@idProducto Int, 
-@idProductor Int 
-) 
- 
-AS 
-update pedidoDetalle SET  
-idPedido=@idPedido,  
-idItem=@idItem,  
-idProducto=@idProducto,  
-idProductor=@idProductor  
- 
- WHERE 
-idPedido = @idPedido and 
-idItem = @idItem  
- 
-IF(@@ERROR=0 AND @@ROWCOUNT>0) BEGIN select 1 as resultado,'' as mensaje END ELSE BEGIN select 0 as Resultado,'Error actualizando' as mensaje END 
- 
-GO 
- 
+
+GO
+
