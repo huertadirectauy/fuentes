@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HuertaDirectaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HuertaDirectaEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="barrioGuardar" ReturnType="Collection(HuertaDirectaModel.barrioGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idCiudad" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="barrioLeer" ReturnType="Collection(HuertaDirectaModel.barrioLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idCiudad" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="calleGuardar" ReturnType="Collection(HuertaDirectaModel.calleGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idCiudad" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="calleLeer" ReturnType="Collection(HuertaDirectaModel.calleLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idCiudad" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="categoriaGuardar" ReturnType="Collection(HuertaDirectaModel.categoriaGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="categoriaLeer" ReturnType="Collection(HuertaDirectaModel.categoriaLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ciudadGuardar" ReturnType="Collection(HuertaDirectaModel.ciudadGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idLocalidad" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ciudadLeer" ReturnType="Collection(HuertaDirectaModel.ciudadLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idLocalidad" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="direccionGuardar" ReturnType="Collection(HuertaDirectaModel.direccionGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="latitud" Mode="In" Type="Int32" />
+      <Parameter Name="longitud" Mode="In" Type="Int32" />
+      <Parameter Name="manzana" Mode="In" Type="String" />
+      <Parameter Name="solar" Mode="In" Type="String" />
+      <Parameter Name="apto" Mode="In" Type="String" />
+      <Parameter Name="numero" Mode="In" Type="String" />
+      <Parameter Name="codigoCalle" Mode="In" Type="Int32" />
+      <Parameter Name="codigoCalleEsquina" Mode="In" Type="Int32" />
+      <Parameter Name="localidad" Mode="In" Type="Int32" />
+      <Parameter Name="codigoCiudad" Mode="In" Type="Int32" />
+      <Parameter Name="codigoProvincia" Mode="In" Type="Int32" />
+      <Parameter Name="codigoPais" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="direccionLeer" ReturnType="Collection(HuertaDirectaModel.direccionLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="latitud" Mode="In" Type="Int32" />
+      <Parameter Name="longitud" Mode="In" Type="Int32" />
+      <Parameter Name="manzana" Mode="In" Type="String" />
+      <Parameter Name="solar" Mode="In" Type="String" />
+      <Parameter Name="apto" Mode="In" Type="String" />
+      <Parameter Name="numero" Mode="In" Type="String" />
+      <Parameter Name="codigoCalle" Mode="In" Type="Int32" />
+      <Parameter Name="codigoCalleEsquina" Mode="In" Type="Int32" />
+      <Parameter Name="localidad" Mode="In" Type="Int32" />
+      <Parameter Name="codigoCiudad" Mode="In" Type="Int32" />
+      <Parameter Name="codigoProvincia" Mode="In" Type="Int32" />
+      <Parameter Name="codigoPais" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="imagenGuardar" ReturnType="Collection(HuertaDirectaModel.imagenGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="imagen" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="imagenLeer" ReturnType="Collection(HuertaDirectaModel.imagenLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="imagen" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="monedaGuardar" ReturnType="Collection(HuertaDirectaModel.monedaGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="monedaLeer" ReturnType="Collection(HuertaDirectaModel.monedaLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PaisGuardar" ReturnType="Collection(HuertaDirectaModel.PaisGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PaisLeer" ReturnType="Collection(HuertaDirectaModel.PaisLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="pedidoDetalleGuardar" ReturnType="Collection(HuertaDirectaModel.pedidoDetalleGuardar_Result)">
+      <Parameter Name="idPedido" Mode="In" Type="Int32" />
+      <Parameter Name="idItem" Mode="In" Type="Int32" />
+      <Parameter Name="idProducto" Mode="In" Type="Int32" />
+      <Parameter Name="idProductor" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pedidoDetalleLeer" ReturnType="Collection(HuertaDirectaModel.pedidoDetalleLeer_Result)">
+      <Parameter Name="idPedido" Mode="In" Type="Int32" />
+      <Parameter Name="idItem" Mode="In" Type="Int32" />
+      <Parameter Name="idProducto" Mode="In" Type="Int32" />
+      <Parameter Name="idProductor" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pedidoGuardar" ReturnType="Collection(HuertaDirectaModel.pedidoGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idPersonaDestinatario" Mode="In" Type="Int32" />
+      <Parameter Name="moneda" Mode="In" Type="Int32" />
+      <Parameter Name="monto" Mode="In" Type="Decimal" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pedidoLeer" ReturnType="Collection(HuertaDirectaModel.pedidoLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idPersonaDestinatario" Mode="In" Type="Int32" />
+      <Parameter Name="moneda" Mode="In" Type="Int32" />
+      <Parameter Name="monto" Mode="In" Type="Decimal" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PersonaGuardar" ReturnType="Collection(HuertaDirectaModel.PersonaGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="primerNombre" Mode="In" Type="String" />
+      <Parameter Name="segundoNombre" Mode="In" Type="String" />
+      <Parameter Name="primerApellido" Mode="In" Type="String" />
+      <Parameter Name="segundoApellido" Mode="In" Type="String" />
+      <Parameter Name="tipoDocumento" Mode="In" Type="Int32" />
+      <Parameter Name="numeroDocumento" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="telefonoFijo" Mode="In" Type="String" />
+      <Parameter Name="telefonoMovil" Mode="In" Type="String" />
+      <Parameter Name="fechaAlta" Mode="In" Type="DateTime" />
+      <Parameter Name="fechaBaja" Mode="In" Type="DateTime" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+      <Parameter Name="calificacion" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PersonaLeer" ReturnType="Collection(HuertaDirectaModel.PersonaLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="primerNombre" Mode="In" Type="String" />
+      <Parameter Name="segundoNombre" Mode="In" Type="String" />
+      <Parameter Name="primerApellido" Mode="In" Type="String" />
+      <Parameter Name="segundoApellido" Mode="In" Type="String" />
+      <Parameter Name="tipoDocumento" Mode="In" Type="Int32" />
+      <Parameter Name="numeroDocumento" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="telefonoFijo" Mode="In" Type="String" />
+      <Parameter Name="telefonoMovil" Mode="In" Type="String" />
+      <Parameter Name="fechaAlta" Mode="In" Type="DateTime" />
+      <Parameter Name="fechaBaja" Mode="In" Type="DateTime" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+      <Parameter Name="calificacion" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="productoGuardar" ReturnType="Collection(HuertaDirectaModel.productoGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idCategoria" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="productoLeer" ReturnType="Collection(HuertaDirectaModel.productoLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idCategoria" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="productoProductorGuardar" ReturnType="Collection(HuertaDirectaModel.productoProductorGuardar_Result)">
+      <Parameter Name="idProducto" Mode="In" Type="Int32" />
+      <Parameter Name="idProductor" Mode="In" Type="Int32" />
+      <Parameter Name="descripcion" Mode="In" Type="String" />
+      <Parameter Name="codigoMoneda" Mode="In" Type="Int32" />
+      <Parameter Name="precio" Mode="In" Type="Decimal" />
+      <Parameter Name="codigoTipoUnidad" Mode="In" Type="Int32" />
+      <Parameter Name="linkSitio" Mode="In" Type="String" />
+      <Parameter Name="linkRedSocial" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="productoProductorLeer" ReturnType="Collection(HuertaDirectaModel.productoProductorLeer_Result)">
+      <Parameter Name="idProducto" Mode="In" Type="Int32" />
+      <Parameter Name="idProductor" Mode="In" Type="Int32" />
+      <Parameter Name="descripcion" Mode="In" Type="String" />
+      <Parameter Name="codigoMoneda" Mode="In" Type="Int32" />
+      <Parameter Name="precio" Mode="In" Type="Decimal" />
+      <Parameter Name="codigoTipoUnidad" Mode="In" Type="Int32" />
+      <Parameter Name="linkSitio" Mode="In" Type="String" />
+      <Parameter Name="linkRedSocial" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="productorGuardar" ReturnType="Collection(HuertaDirectaModel.productorGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idPersona" Mode="In" Type="Int32" />
+      <Parameter Name="nombreFantasia" Mode="In" Type="String" />
+      <Parameter Name="descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="productorLeer" ReturnType="Collection(HuertaDirectaModel.productorLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idPersona" Mode="In" Type="Int32" />
+      <Parameter Name="nombreFantasia" Mode="In" Type="String" />
+      <Parameter Name="descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="provinciaGuardar" ReturnType="Collection(HuertaDirectaModel.provinciaGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idPais" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="provinciaLeer" ReturnType="Collection(HuertaDirectaModel.provinciaLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="idPais" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="tipoUnidadGuardar" ReturnType="Collection(HuertaDirectaModel.tipoUnidadGuardar_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="tipoUnidadLeer" ReturnType="Collection(HuertaDirectaModel.tipoUnidadLeer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UsuarioGuardar" ReturnType="Collection(HuertaDirectaModel.UsuarioGuardar_Result)">
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="fechaAlta" Mode="In" Type="DateTime" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UsuarioLeer" ReturnType="Collection(HuertaDirectaModel.UsuarioLeer_Result)">
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="fechaAlta" Mode="In" Type="DateTime" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="login" ReturnType="Collection(HuertaDirectaModel.login_Result)">
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="barrioGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="barrioLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="idCiudad" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="calleGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="calleLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="idCiudad" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="categoriaGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="categoriaLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="ciudadGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="ciudadLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="idLocalidad" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="direccionGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="direccionLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="latitud" Nullable="true" />
+    <Property Type="Int32" Name="longitud" Nullable="true" />
+    <Property Type="String" Name="manzana" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="solar" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="apto" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="numero" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="codigoCalle" Nullable="true" />
+    <Property Type="Int32" Name="codigoCalleEsquina" Nullable="true" />
+    <Property Type="Int32" Name="localidad" Nullable="true" />
+    <Property Type="Int32" Name="codigoCiudad" Nullable="true" />
+    <Property Type="Int32" Name="codigoProvincia" Nullable="true" />
+    <Property Type="Int32" Name="codigoPais" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="imagenGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="imagenLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="imagen" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="monedaGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="monedaLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="PaisGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="PaisLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="pedidoDetalleGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="pedidoDetalleLeer_Result">
+    <Property Type="Int32" Name="idPedido" Nullable="false" />
+    <Property Type="Int32" Name="idItem" Nullable="false" />
+    <Property Type="Int32" Name="idProducto" Nullable="true" />
+    <Property Type="Int32" Name="idProductor" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="pedidoGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="pedidoLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="idPersonaDestinatario" Nullable="true" />
+    <Property Type="Int32" Name="moneda" Nullable="true" />
+    <Property Type="Decimal" Name="monto" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="estado" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PersonaGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="PersonaLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="primerNombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="segundoNombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="primerApellido" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="segundoApellido" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="tipoDocumento" Nullable="true" />
+    <Property Type="String" Name="numeroDocumento" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="telefonoFijo" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="telefonoMovil" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="fechaAlta" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="fechaBaja" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="estado" Nullable="true" />
+    <Property Type="Int32" Name="calificacion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="productoGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="productoLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="idCategoria" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="5000" />
+  </ComplexType>
+  <ComplexType Name="productoProductorGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="productoProductorLeer_Result">
+    <Property Type="Int32" Name="idProducto" Nullable="false" />
+    <Property Type="Int32" Name="idProductor" Nullable="false" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="codigoMoneda" Nullable="true" />
+    <Property Type="Decimal" Name="precio" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="codigoTipoUnidad" Nullable="true" />
+    <Property Type="String" Name="linkSitio" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="linkRedSocial" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="productorGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="productorLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="idPersona" Nullable="true" />
+    <Property Type="String" Name="nombreFantasia" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="provinciaGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="provinciaLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="idPais" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="tipoUnidadGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="tipoUnidadLeer_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="UsuarioGuardar_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="UsuarioLeer_Result">
+    <Property Type="String" Name="usuario" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="password" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="fechaAlta" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="estado" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="login_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="14" />
+  </ComplexType>
+</Schema>

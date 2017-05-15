@@ -1,0 +1,4 @@
+C:\huertadirecta\fuentes\huertadirecta\Excepciones\bin\Excepciones.dll
+C:\huertadirecta\fuentes\huertadirecta\Excepciones\bin\Excepciones.pdb
+C:\huertadirecta\fuentes\huertadirecta\Excepciones\obj\Debug\Excepciones.dll
+C:\huertadirecta\fuentes\huertadirecta\Excepciones\obj\Debug\Excepciones.pdb

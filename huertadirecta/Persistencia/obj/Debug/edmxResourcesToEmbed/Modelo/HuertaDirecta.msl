@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HuertaDirectaModelStoreContainer" CdmEntityContainer="HuertaDirectaEntities">
+    <FunctionImportMapping FunctionImportName="barrioGuardar" FunctionName="HuertaDirectaModel.Store.barrioGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.barrioGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="barrioLeer" FunctionName="HuertaDirectaModel.Store.barrioLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.barrioLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="calleGuardar" FunctionName="HuertaDirectaModel.Store.calleGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.calleGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="calleLeer" FunctionName="HuertaDirectaModel.Store.calleLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.calleLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="categoriaGuardar" FunctionName="HuertaDirectaModel.Store.categoriaGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.categoriaGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="categoriaLeer" FunctionName="HuertaDirectaModel.Store.categoriaLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.categoriaLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ciudadGuardar" FunctionName="HuertaDirectaModel.Store.ciudadGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.ciudadGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ciudadLeer" FunctionName="HuertaDirectaModel.Store.ciudadLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.ciudadLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idLocalidad" ColumnName="idLocalidad" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="direccionGuardar" FunctionName="HuertaDirectaModel.Store.direccionGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.direccionGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="direccionLeer" FunctionName="HuertaDirectaModel.Store.direccionLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.direccionLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="latitud" ColumnName="latitud" />
+          <ScalarProperty Name="longitud" ColumnName="longitud" />
+          <ScalarProperty Name="manzana" ColumnName="manzana" />
+          <ScalarProperty Name="solar" ColumnName="solar" />
+          <ScalarProperty Name="apto" ColumnName="apto" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="codigoCalle" ColumnName="codigoCalle" />
+          <ScalarProperty Name="codigoCalleEsquina" ColumnName="codigoCalleEsquina" />
+          <ScalarProperty Name="localidad" ColumnName="localidad" />
+          <ScalarProperty Name="codigoCiudad" ColumnName="codigoCiudad" />
+          <ScalarProperty Name="codigoProvincia" ColumnName="codigoProvincia" />
+          <ScalarProperty Name="codigoPais" ColumnName="codigoPais" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="imagenGuardar" FunctionName="HuertaDirectaModel.Store.imagenGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.imagenGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="imagenLeer" FunctionName="HuertaDirectaModel.Store.imagenLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.imagenLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="monedaGuardar" FunctionName="HuertaDirectaModel.Store.monedaGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.monedaGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="monedaLeer" FunctionName="HuertaDirectaModel.Store.monedaLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.monedaLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PaisGuardar" FunctionName="HuertaDirectaModel.Store.PaisGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.PaisGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PaisLeer" FunctionName="HuertaDirectaModel.Store.PaisLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.PaisLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pedidoDetalleGuardar" FunctionName="HuertaDirectaModel.Store.pedidoDetalleGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.pedidoDetalleGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pedidoDetalleLeer" FunctionName="HuertaDirectaModel.Store.pedidoDetalleLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.pedidoDetalleLeer_Result">
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+          <ScalarProperty Name="idItem" ColumnName="idItem" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="idProductor" ColumnName="idProductor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pedidoGuardar" FunctionName="HuertaDirectaModel.Store.pedidoGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.pedidoGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pedidoLeer" FunctionName="HuertaDirectaModel.Store.pedidoLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.pedidoLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idPersonaDestinatario" ColumnName="idPersonaDestinatario" />
+          <ScalarProperty Name="moneda" ColumnName="moneda" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PersonaGuardar" FunctionName="HuertaDirectaModel.Store.PersonaGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.PersonaGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PersonaLeer" FunctionName="HuertaDirectaModel.Store.PersonaLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.PersonaLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="primerNombre" ColumnName="primerNombre" />
+          <ScalarProperty Name="segundoNombre" ColumnName="segundoNombre" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+          <ScalarProperty Name="numeroDocumento" ColumnName="numeroDocumento" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telefonoFijo" ColumnName="telefonoFijo" />
+          <ScalarProperty Name="telefonoMovil" ColumnName="telefonoMovil" />
+          <ScalarProperty Name="fechaAlta" ColumnName="fechaAlta" />
+          <ScalarProperty Name="fechaBaja" ColumnName="fechaBaja" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="calificacion" ColumnName="calificacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="productoGuardar" FunctionName="HuertaDirectaModel.Store.productoGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.productoGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="productoLeer" FunctionName="HuertaDirectaModel.Store.productoLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.productoLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="productoProductorGuardar" FunctionName="HuertaDirectaModel.Store.productoProductorGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.productoProductorGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="productoProductorLeer" FunctionName="HuertaDirectaModel.Store.productoProductorLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.productoProductorLeer_Result">
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="idProductor" ColumnName="idProductor" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="codigoMoneda" ColumnName="codigoMoneda" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="codigoTipoUnidad" ColumnName="codigoTipoUnidad" />
+          <ScalarProperty Name="linkSitio" ColumnName="linkSitio" />
+          <ScalarProperty Name="linkRedSocial" ColumnName="linkRedSocial" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="productorGuardar" FunctionName="HuertaDirectaModel.Store.productorGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.productorGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="productorLeer" FunctionName="HuertaDirectaModel.Store.productorLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.productorLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+          <ScalarProperty Name="nombreFantasia" ColumnName="nombreFantasia" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="provinciaGuardar" FunctionName="HuertaDirectaModel.Store.provinciaGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.provinciaGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="provinciaLeer" FunctionName="HuertaDirectaModel.Store.provinciaLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.provinciaLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="tipoUnidadGuardar" FunctionName="HuertaDirectaModel.Store.tipoUnidadGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.tipoUnidadGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="tipoUnidadLeer" FunctionName="HuertaDirectaModel.Store.tipoUnidadLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.tipoUnidadLeer_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UsuarioGuardar" FunctionName="HuertaDirectaModel.Store.UsuarioGuardar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.UsuarioGuardar_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UsuarioLeer" FunctionName="HuertaDirectaModel.Store.UsuarioLeer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.UsuarioLeer_Result">
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fechaAlta" ColumnName="fechaAlta" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="login" FunctionName="HuertaDirectaModel.Store.login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.login_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

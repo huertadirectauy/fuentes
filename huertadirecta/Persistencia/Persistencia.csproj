@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AEFD9036-FF89-4F39-99B4-334998188B1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Persistencia</RootNamespace>
+    <AssemblyName>Persistencia</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Dto">
+      <HintPath>..\Dto\bin\Dto.dll</HintPath>
+    </Reference>
+    <Reference Include="Dto">
+      <HintPath>..\Dto\bin\Dto.dll</HintPath>
+    </Reference>
+    <Reference Include="Excepciones">
+      <HintPath>..\Excepciones\bin\Excepciones.dll</HintPath>
+    </Reference>
+    <Reference Include="Validadores">
+      <HintPath>..\Validadores\bin\Validadores.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Modelo\HuertaDirecta.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HuertaDirecta.edmx</DependentUpon>
+      <LastGenOutput>HuertaDirecta.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modelo\HuertaDirecta.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HuertaDirecta.edmx</DependentUpon>
+      <LastGenOutput>HuertaDirecta.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Modelo\barrioGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\barrioLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\calleGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\calleLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\categoriaGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\categoriaLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ciudadGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ciudadLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\direccionGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\direccionLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\HuertaDirecta.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HuertaDirecta.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\HuertaDirecta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\HuertaDirecta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HuertaDirecta.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\imagenGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\imagenLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\login_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\monedaGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\monedaLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PaisGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PaisLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\pedidoDetalleGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\pedidoDetalleLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\pedidoGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\pedidoLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PersonaGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PersonaLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\productoGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\productoLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\productoProductorGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\productoProductorLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\productorGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\productorLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\provinciaGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\provinciaLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tipoUnidadGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tipoUnidadLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\UsuarioGuardar_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\UsuarioLeer_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="direccion.cs" />
+    <Compile Include="Pais.cs" />
+    <Compile Include="provincia.cs" />
+    <Compile Include="ciudad.cs" />
+    <Compile Include="barrio.cs" />
+    <Compile Include="calle.cs" />
+    <Compile Include="productor.cs" />
+    <Compile Include="imagen.cs" />
+    <Compile Include="producto.cs" />
+    <Compile Include="categoria.cs" />
+    <Compile Include="moneda.cs" />
+    <Compile Include="tipoUnidad.cs" />
+    <Compile Include="productoProductor.cs" />
+    <Compile Include="pedido.cs" />
+    <Compile Include="pedidoDetalle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Modelo\HuertaDirecta.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HuertaDirecta.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelo\HuertaDirecta.edmx.diagram">
+      <DependentUpon>HuertaDirecta.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

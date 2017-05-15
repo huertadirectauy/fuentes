@@ -1,0 +1,4 @@
+C:\huertadirecta\fuentes\huertadirecta\Dto\bin\Dto.dll
+C:\huertadirecta\fuentes\huertadirecta\Dto\bin\Dto.pdb
+C:\huertadirecta\fuentes\huertadirecta\Dto\obj\Debug\Dto.dll
+C:\huertadirecta\fuentes\huertadirecta\Dto\obj\Debug\Dto.pdb

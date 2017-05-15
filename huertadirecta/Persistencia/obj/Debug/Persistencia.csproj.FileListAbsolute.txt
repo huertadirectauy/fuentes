@@ -1,0 +1,17 @@
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\Persistencia.dll.config
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\Persistencia.dll
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\Persistencia.pdb
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\Dto.dll
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\EntityFramework.dll
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\EntityFramework.SqlServer.dll
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\Excepciones.dll
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\Validadores.dll
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\EntityFramework.xml
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\EntityFramework.SqlServer.xml
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\Dto.pdb
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\Excepciones.pdb
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\Validadores.pdb
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\es\EntityFramework.resources.dll
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\es\EntityFramework.SqlServer.resources.dll
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\obj\Debug\Persistencia.dll
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\obj\Debug\Persistencia.pdb
