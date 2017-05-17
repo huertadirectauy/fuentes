@@ -96,6 +96,6 @@ C:\huertadirecta\fuentes\huertadirecta\Site\bin\es\Microsoft.Owin.Security.Faceb
 C:\huertadirecta\fuentes\huertadirecta\Site\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\huertadirecta\fuentes\huertadirecta\Site\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\huertadirecta\fuentes\huertadirecta\Site\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\huertadirecta\fuentes\huertadirecta\Site\obj\Debug\Site.csprojResolveAssemblyReference.cache
 C:\huertadirecta\fuentes\huertadirecta\Site\obj\Debug\Site.dll
 C:\huertadirecta\fuentes\huertadirecta\Site\obj\Debug\Site.pdb
+C:\huertadirecta\fuentes\huertadirecta\Site\obj\Debug\Site.csprojResolveAssemblyReference.cache

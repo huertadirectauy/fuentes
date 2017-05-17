@@ -182,6 +182,9 @@
     <Compile Include="Modelo\provinciaLeer_Result.cs">
       <DependentUpon>HuertaDirecta.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\RegistrarPersona_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\tipoUnidadGuardar_Result.cs">
       <DependentUpon>HuertaDirecta.tt</DependentUpon>
     </Compile>

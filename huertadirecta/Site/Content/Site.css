@@ -24,6 +24,11 @@ textarea {
 }
 /* sobreescribo el bootstrap*/
 
+.navbar{
+    margin-bottom:0px;
+    min-height: 60px;
+}
+
 .navbar-header{
    background-color:#468847 !important;
    color: white; 
@@ -86,4 +91,10 @@ body {
 .img-cabezal {
     width:100% !important;
     height:150px !important;
+}
+
+.hwhite {
+    color:white;
+    font-size:x-large;
+    margin-left:15%;
 }

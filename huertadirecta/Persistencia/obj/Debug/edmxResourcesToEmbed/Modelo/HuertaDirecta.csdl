@@ -229,6 +229,20 @@
       <Parameter Name="usuario" Mode="In" Type="String" />
       <Parameter Name="password" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="RegistrarPersona" ReturnType="Collection(HuertaDirectaModel.RegistrarPersona_Result)">
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="primerNombre" Mode="In" Type="String" />
+      <Parameter Name="segundoNombre" Mode="In" Type="String" />
+      <Parameter Name="primerApellido" Mode="In" Type="String" />
+      <Parameter Name="segundoApellido" Mode="In" Type="String" />
+      <Parameter Name="tipoDocumento" Mode="In" Type="Int32" />
+      <Parameter Name="numeroDocumento" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="telefonoFijo" Mode="In" Type="String" />
+      <Parameter Name="telefonoMovil" Mode="In" Type="String" />
+      <Parameter Name="fechaNacimiento" Mode="In" Type="DateTime" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="barrioGuardar_Result">
     <Property Type="Int32" Name="resultado" Nullable="false" />
@@ -413,5 +427,9 @@
   <ComplexType Name="login_Result">
     <Property Type="Int32" Name="resultado" Nullable="false" />
     <Property Type="String" Name="mensaje" Nullable="false" MaxLength="14" />
+  </ComplexType>
+  <ComplexType Name="RegistrarPersona_Result">
+    <Property Type="Int32" Name="resultado" Nullable="false" />
+    <Property Type="String" Name="mensaje" Nullable="false" MaxLength="45" />
   </ComplexType>
 </Schema>

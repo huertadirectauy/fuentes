@@ -21,11 +21,7 @@ namespace Persistencia.Modelo
             : base("name=HuertaDirectaEntities")
         {
         }
-
-        public HuertaDirectaEntities(string nameOrConnectionString) : base(nameOrConnectionString)
-        {
-        }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -837,6 +833,59 @@ namespace Persistencia.Modelo
                 new ObjectParameter("password", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<login_Result>("login", usuarioParameter, passwordParameter);
+        }
+    
+        public virtual ObjectResult<RegistrarPersona_Result> RegistrarPersona(string usuario, string password, string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, Nullable<int> tipoDocumento, string numeroDocumento, string email, string telefonoFijo, string telefonoMovil, Nullable<System.DateTime> fechaNacimiento)
+        {
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("usuario", usuario) :
+                new ObjectParameter("usuario", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            var primerNombreParameter = primerNombre != null ?
+                new ObjectParameter("primerNombre", primerNombre) :
+                new ObjectParameter("primerNombre", typeof(string));
+    
+            var segundoNombreParameter = segundoNombre != null ?
+                new ObjectParameter("segundoNombre", segundoNombre) :
+                new ObjectParameter("segundoNombre", typeof(string));
+    
+            var primerApellidoParameter = primerApellido != null ?
+                new ObjectParameter("primerApellido", primerApellido) :
+                new ObjectParameter("primerApellido", typeof(string));
+    
+            var segundoApellidoParameter = segundoApellido != null ?
+                new ObjectParameter("segundoApellido", segundoApellido) :
+                new ObjectParameter("segundoApellido", typeof(string));
+    
+            var tipoDocumentoParameter = tipoDocumento.HasValue ?
+                new ObjectParameter("tipoDocumento", tipoDocumento) :
+                new ObjectParameter("tipoDocumento", typeof(int));
+    
+            var numeroDocumentoParameter = numeroDocumento != null ?
+                new ObjectParameter("numeroDocumento", numeroDocumento) :
+                new ObjectParameter("numeroDocumento", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var telefonoFijoParameter = telefonoFijo != null ?
+                new ObjectParameter("telefonoFijo", telefonoFijo) :
+                new ObjectParameter("telefonoFijo", typeof(string));
+    
+            var telefonoMovilParameter = telefonoMovil != null ?
+                new ObjectParameter("telefonoMovil", telefonoMovil) :
+                new ObjectParameter("telefonoMovil", typeof(string));
+    
+            var fechaNacimientoParameter = fechaNacimiento.HasValue ?
+                new ObjectParameter("fechaNacimiento", fechaNacimiento) :
+                new ObjectParameter("fechaNacimiento", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistrarPersona_Result>("RegistrarPersona", usuarioParameter, passwordParameter, primerNombreParameter, segundoNombreParameter, primerApellidoParameter, segundoApellidoParameter, tipoDocumentoParameter, numeroDocumentoParameter, emailParameter, telefonoFijoParameter, telefonoMovilParameter, fechaNacimientoParameter);
         }
     }
 }

@@ -213,6 +213,20 @@
           <Parameter Name="idPais" Type="int" Mode="In" />
           <Parameter Name="nombre" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="RegistrarPersona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+          <Parameter Name="primerNombre" Type="varchar" Mode="In" />
+          <Parameter Name="segundoNombre" Type="varchar" Mode="In" />
+          <Parameter Name="primerApellido" Type="varchar" Mode="In" />
+          <Parameter Name="segundoApellido" Type="varchar" Mode="In" />
+          <Parameter Name="tipoDocumento" Type="int" Mode="In" />
+          <Parameter Name="numeroDocumento" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="telefonoFijo" Type="varchar" Mode="In" />
+          <Parameter Name="telefonoMovil" Type="varchar" Mode="In" />
+          <Parameter Name="fechaNacimiento" Type="datetime" Mode="In" />
+        </Function>
         <Function Name="tipoUnidadGuardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
           <Parameter Name="nombre" Type="varchar" Mode="In" />
@@ -467,6 +481,20 @@
             <Parameter Name="usuario" Mode="In" Type="String" />
             <Parameter Name="password" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="RegistrarPersona" ReturnType="Collection(HuertaDirectaModel.RegistrarPersona_Result)">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="primerNombre" Mode="In" Type="String" />
+            <Parameter Name="segundoNombre" Mode="In" Type="String" />
+            <Parameter Name="primerApellido" Mode="In" Type="String" />
+            <Parameter Name="segundoApellido" Mode="In" Type="String" />
+            <Parameter Name="tipoDocumento" Mode="In" Type="Int32" />
+            <Parameter Name="numeroDocumento" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="telefonoFijo" Mode="In" Type="String" />
+            <Parameter Name="telefonoMovil" Mode="In" Type="String" />
+            <Parameter Name="fechaNacimiento" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="barrioGuardar_Result">
           <Property Type="Int32" Name="resultado" Nullable="false" />
@@ -651,6 +679,10 @@
         <ComplexType Name="login_Result">
           <Property Type="Int32" Name="resultado" Nullable="false" />
           <Property Type="String" Name="mensaje" Nullable="false" MaxLength="14" />
+        </ComplexType>
+        <ComplexType Name="RegistrarPersona_Result">
+          <Property Type="Int32" Name="resultado" Nullable="false" />
+          <Property Type="String" Name="mensaje" Nullable="false" MaxLength="45" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -977,6 +1009,14 @@
           <FunctionImportMapping FunctionImportName="login" FunctionName="HuertaDirectaModel.Store.login">
             <ResultMapping>
               <ComplexTypeMapping TypeName="HuertaDirectaModel.login_Result">
+                <ScalarProperty Name="resultado" ColumnName="resultado" />
+                <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RegistrarPersona" FunctionName="HuertaDirectaModel.Store.RegistrarPersona">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HuertaDirectaModel.RegistrarPersona_Result">
                 <ScalarProperty Name="resultado" ColumnName="resultado" />
                 <ScalarProperty Name="mensaje" ColumnName="mensaje" />
               </ComplexTypeMapping>

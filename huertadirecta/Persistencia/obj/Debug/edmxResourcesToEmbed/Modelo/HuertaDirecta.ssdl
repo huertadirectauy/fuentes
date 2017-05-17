@@ -208,6 +208,20 @@
     <Parameter Name="idPais" Type="int" Mode="In" />
     <Parameter Name="nombre" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="RegistrarPersona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+    <Parameter Name="primerNombre" Type="varchar" Mode="In" />
+    <Parameter Name="segundoNombre" Type="varchar" Mode="In" />
+    <Parameter Name="primerApellido" Type="varchar" Mode="In" />
+    <Parameter Name="segundoApellido" Type="varchar" Mode="In" />
+    <Parameter Name="tipoDocumento" Type="int" Mode="In" />
+    <Parameter Name="numeroDocumento" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="telefonoFijo" Type="varchar" Mode="In" />
+    <Parameter Name="telefonoMovil" Type="varchar" Mode="In" />
+    <Parameter Name="fechaNacimiento" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="tipoUnidadGuardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="int" Mode="In" />
     <Parameter Name="nombre" Type="varchar" Mode="In" />

@@ -1,6 +1,4 @@
-﻿
-
-$(window).load(function(){
+﻿$(window).load(function(){
     $("#btnLogin").click(function(){
         /*$.ajax({
             type: "POST",

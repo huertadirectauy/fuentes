@@ -9,33 +9,29 @@
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/Helpers/Ajax.js"></script>
 </head>
-<body>
-    <div class="cabezal">
-        <img src="/Content/imgHuerta.jpg" class="img-cabezal" />
-    </div>
+<body>    
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="Home/Index">Huerta Directa</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Inicio</a></li>
+                <li class="active"><a href="/Home/#">Inicio</a></li>
                 <li><a href="/Home/About">Quienes somos?</a></li>
                 <li><a href="/Home/Contact">Contacto</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+                <li><a href="/Home/Registrar"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
                 <li><a href="/Home/Login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
             </ul>
         </div>
     </nav>
-    <div class="container body-content">
+    
         @RenderBody()
-        <hr />
+
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Huerta Directa</p>
         </footer>
-    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
