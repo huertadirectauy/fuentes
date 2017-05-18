@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color:#FFFFFF !important;
+    color:#5d8625 !important;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -8,6 +10,7 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -30,7 +33,7 @@ textarea {
 }
 
 .navbar-header{
-   background-color:#468847 !important;
+   background-color:rgb(65, 122, 65) !important;
    color: white; 
 }
 
@@ -44,13 +47,13 @@ textarea {
 }
 
 .navbar-collapse{
-   background-color:#468847 !important;
+   background-color:rgb(65, 122, 65) !important;
    color: white; 
 }
 
 .navbar-inverse {
-       background-color:#468847 !important;
-        border-color:#468847 !important;
+       background-color:rgb(65, 122, 65) !important;
+        border-color:rgb(65, 122, 65) !important;
 }
 
 .navbar-inverse a {
@@ -63,6 +66,7 @@ textarea {
 
 .form-control{
      margin-bottom:10px !important;
+     background-color:#E7F0D9 !important;
 }
 
 .btn{
@@ -75,8 +79,8 @@ textarea {
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    background-color:#389139;
-    border-color:#468847 !important;
+    background-color:rgb(65, 122, 65);
+    border-color:rgb(65, 122, 65) !important;
 }
 
 body {
@@ -97,4 +101,10 @@ body {
     color:white;
     font-size:x-large;
     margin-left:15%;
+}
+
+footer {
+    background-color:#5e5449 !important;
+    height:250px !important;
+    color: #FFFFFF !important;
 }
