@@ -1,14 +1,24 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {   
     background-color:#FFFFFF !important;
     color:#5d8625 !important;
+    margin-bottom: 30px;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 8%
 }
 
 
@@ -26,14 +36,14 @@ textarea {
     max-width: 280px;
 }
 /* sobreescribo el bootstrap*/
-
+/*
 .navbar{
     margin-bottom:0px;
     min-height: 60px;
 }
 
 .navbar-header{
-   background-color:rgb(65, 122, 65) !important;
+   background-color:#6B8E23 !important;
    color: white; 
 }
 
@@ -47,13 +57,13 @@ textarea {
 }
 
 .navbar-collapse{
-   background-color:rgb(65, 122, 65) !important;
+   background-color:#6B8E23 !important;
    color: white; 
 }
 
 .navbar-inverse {
-       background-color:rgb(65, 122, 65) !important;
-        border-color:rgb(65, 122, 65) !important;
+       background-color:#6B8E23 !important;
+        border-color:#6B8E23 !important;
 }
 
 .navbar-inverse a {
@@ -63,7 +73,7 @@ textarea {
 .navbar-inverse .navbar-nav > li > a  {
         color: white !important;      
 }
-
+    */
 .form-control{
      margin-bottom:10px !important;
      background-color:#E7F0D9 !important;
@@ -77,16 +87,12 @@ textarea {
     text-align: left !important;
     padding-right:0% !important;
 }
-
+/*
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    background-color:rgb(65, 122, 65);
-    border-color:rgb(65, 122, 65) !important;
+    background-color:#6B8E23;
+    border-color:#6B8E23 !important;
 }
-
-body {
-    padding-top:0px !important;
-}
-
+*/
 .cabezal {
     width:100%;
     height:10%;
@@ -103,8 +109,64 @@ body {
     margin-left:15%;
 }
 
-footer {
-    background-color:#5e5449 !important;
-    height:250px !important;
-    color: #FFFFFF !important;
+.header{
+    height:80px !important;
+    background-color:#6B8E23;
+}
+.Content{
+    height: 100% !important;   
+    padding-top: 0px !important;
+    padding-bottom: 30px !important;
+}
+.Footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #5f4b3d;
+  text-align: center;
+  color:antiquewhite;
+}
+
+.footerText{
+    font-size:x-large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif 
+}
+
+.alignTextLeft {
+    text-align:left;
+}
+
+.ulFontLarge {
+    font-size:large;
+}
+
+.navBarContLink {
+    padding-top:20px;
+    padding-left:5px;
+    padding-right:5px;
+    padding-bottom:0px;
+}
+
+.navBarLink {
+    font-size:18px;
+    font-family:'Source Sans Pro',sans-serif;
+    color:white !important;
+    padding-left:20px;
+    padding-right:20px;
+    color:white !important;
+     
+}   
+
+a:link{
+    text-decoration:none; 
+}
+
+.bavBarLogo {
+    font-size:x-large;
+    color:white !important;
+    padding-top:2px;
+    padding-left:5px;
+    padding-bottom:2px;
 }

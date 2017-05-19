@@ -10,34 +10,56 @@
     <script src="~/Scripts/Helpers/Ajax.js"></script>
 </head>
 <body>    
-    
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="Home/Index">Huerta Directa</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="/Home/#">Inicio</a></li>
-                    <li><a href="/Home/About">Quienes somos?</a></li>
-                    <li><a href="/Home/Contact">Contacto</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/Home/Registrar"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
-                    <li><a href="/Home/Login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
-                </ul>
+    <div id="header" class="Header">
+        <div class="row header">
+            <div class="col-md-3">
+                <a class="bavBarLogo" href="/"><img src="~/Content/huertaIcon.png" width="70" />&nbsp;Huerta Directa</a>
             </div>
-        </nav>
-    <div class="container body-content">
+            <div class="col-md-3">
+               
+            </div>
+            <div class="col-md-5 navBarContLink">
+                <a class="navBarLink" href="/Home/#">Pedido</a>
+            
+                <a class="navBarLink" href="/Home/About">Productores</a>
+           
+                <a class="navBarLink" href="/Home/Contact">Carrito</a>
+          
+                <a class="navBarLink" href="/Home/Login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a>
+            
+                <a class="navBarLink" href="/Home/Registrar"><span class="glyphicon glyphicon-user"></span> Registrarse</a>
+            </div> 
+        </div>
+    </div>
+    <div id="content" class="Content">
         @RenderBody()
     </div>
-        <footer>
-            <div></div>
-            <div><p>&copy; @DateTime.Now.Year - Huerta Directa</p></div>
-            
-        </footer>
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+    <div id="footer" class="Footer">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 footerText">
+                <br />
+                FACEBOOK
+            </div>
+            <div class="col-md-4 footerText alignTextLeft">
+                <ul>
+                    <br />
+                    <li>Quienes somos?
+                    <li>Puntos de venta
+                    <li>Contacto
+                </ul>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4 footerText alignTextLeft"></div>
+            <div class="col-md-2"><p>&copy; @DateTime.Now.Year - Huerta Directa</p></div>
+        </div>
+    </div>
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
 </body>
 </html>
