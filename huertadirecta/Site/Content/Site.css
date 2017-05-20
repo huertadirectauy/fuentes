@@ -110,7 +110,7 @@ textarea {
 }
 
 .header{
-    height:80px !important;
+    height:100px !important;
     background-color:#6B8E23;
 }
 .Content{
@@ -143,19 +143,19 @@ textarea {
 }
 
 .navBarContLink {
-    padding-top:20px;
+    padding-top:35px;
     padding-left:5px;
     padding-right:5px;
     padding-bottom:0px;
 }
 
 .navBarLink {
-    font-size:18px;
+    font-size:20px;
     font-family:'Source Sans Pro',sans-serif;
     color:white !important;
     padding-left:20px;
     padding-right:20px;
-    color:white !important;
+    color:#b9dba7 !important;
      
 }   
 
@@ -164,9 +164,9 @@ a:link{
 }
 
 .bavBarLogo {
-    font-size:x-large;
+    font-size:xx-large;
     color:white !important;
-    padding-top:2px;
-    padding-left:5px;
-    padding-bottom:2px;
+    padding-top:8px !important;
+    padding-bottom:5px !important;
+    padding-left:10px !important;
 }
