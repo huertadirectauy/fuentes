@@ -1,3 +1,4 @@
+C:\huertadirecta\fuentes\huertadirecta\huertadirecta\obj\Debug\Api.csprojResolveAssemblyReference.cache
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\ApplicationInsights.config
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\roslyn\csc.exe
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -18,7 +19,6 @@ C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Antlr3.Runtime.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Dto.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\EntityFramework.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\EntityFramework.SqlServer.dll
-C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Logica.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Microsoft.AI.Agent.Intercept.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Microsoft.AI.DependencyCollector.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -54,10 +54,7 @@ C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\System.Web.WebPages.Dep
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\System.Web.WebPages.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\System.Web.WebPages.Razor.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\WebGrease.dll
-C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Persistencia.dll
-C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Excepciones.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Dto.pdb
-C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Logica.pdb
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Microsoft.AI.DependencyCollector.xml
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Microsoft.AI.Web.xml
@@ -91,7 +88,6 @@ C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Microsoft.Owin.Security
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Microsoft.Owin.Security.Twitter.xml
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\System.Web.Http.Owin.xml
-C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Excepciones.pdb
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\es\System.Net.Http.Formatting.resources.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\es\System.Web.Helpers.resources.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\es\System.Web.Http.resources.dll
@@ -115,7 +111,11 @@ C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\es\Microsoft.Owin.Secur
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\es\System.Web.Http.Owin.resources.dll
-C:\huertadirecta\fuentes\huertadirecta\huertadirecta\obj\Debug\Api.csprojResolveAssemblyReference.cache
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\obj\Debug\huertadirecta.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\obj\Debug\huertadirecta.pdb
+C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Logica.dll
+C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Persistencia.dll
+C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Excepciones.dll
+C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Logica.pdb
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Persistencia.pdb
+C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\Excepciones.pdb

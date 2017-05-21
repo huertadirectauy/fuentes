@@ -74,6 +74,7 @@
     <Compile Include="productoProductor.cs" />
     <Compile Include="pedido.cs" />
     <Compile Include="pedidoDetalle.cs" />
+    <Compile Include="maestros.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Settings.settings">

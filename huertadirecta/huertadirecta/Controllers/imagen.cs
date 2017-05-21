@@ -6,7 +6,7 @@ using System.Web.Http;
 
 namespace imagen.Controllers{ 
 public class imagenController:ApiController{ 
- 
+ /*
 public Dto.Resultado Leerimagen(Dto.imagen dto){ 
 Dto.Resultado resultado=new Dto.Resultado(); 
 try {
@@ -24,6 +24,6 @@ try {
 }catch(Exception ex){resultado=null;} 
 return resultado; 
 } 
- 
+ */
 } 
 } 

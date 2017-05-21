@@ -76,6 +76,14 @@
     <Parameter Name="id" Type="int" Mode="In" />
     <Parameter Name="imagen" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="listadoProductos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idCategoria" Type="int" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="idProductor" Type="int" Mode="In" />
+    <Parameter Name="idZona" Type="int" Mode="In" />
+    <Parameter Name="idPuntoVenta" Type="int" Mode="In" />
+  </Function>
+  <Function Name="listaZonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="usuario" Type="varchar" Mode="In" />
     <Parameter Name="password" Type="varchar" Mode="In" />

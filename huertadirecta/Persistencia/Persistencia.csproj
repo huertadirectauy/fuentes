@@ -125,6 +125,15 @@
     <Compile Include="Modelo\imagenLeer_Result.cs">
       <DependentUpon>HuertaDirecta.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\lisatadoProductos_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\listadoProductos_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\listaZonas_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\login_Result.cs">
       <DependentUpon>HuertaDirecta.tt</DependentUpon>
     </Compile>
@@ -213,13 +222,14 @@
     <Compile Include="calle.cs" />
     <Compile Include="productor.cs" />
     <Compile Include="imagen.cs" />
-    <Compile Include="producto.cs" />
+    <Compile Include="Producto.cs" />
     <Compile Include="categoria.cs" />
     <Compile Include="moneda.cs" />
     <Compile Include="tipoUnidad.cs" />
     <Compile Include="productoProductor.cs" />
     <Compile Include="pedido.cs" />
     <Compile Include="pedidoDetalle.cs" />
+    <Compile Include="maestros.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -333,5 +333,40 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="listadoProductos" FunctionName="HuertaDirectaModel.Store.listadoProductos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.listadoProductos_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="codigoMoneda" ColumnName="codigoMoneda" />
+          <ScalarProperty Name="moneda" ColumnName="moneda" />
+          <ScalarProperty Name="codigoTipoUnidad" ColumnName="codigoTipoUnidad" />
+          <ScalarProperty Name="textoTipoUnidad" ColumnName="textoTipoUnidad" />
+          <ScalarProperty Name="nombreProductor" ColumnName="nombreProductor" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="listaZonas" FunctionName="HuertaDirectaModel.Store.listaZonas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.listaZonas_Result">
+          <ScalarProperty Name="idZona" ColumnName="idZona" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
+          <ScalarProperty Name="coordenada1X" ColumnName="coordenada1X" />
+          <ScalarProperty Name="coordenada1Y" ColumnName="coordenada1Y" />
+          <ScalarProperty Name="coordenada2X" ColumnName="coordenada2X" />
+          <ScalarProperty Name="coordenada2Y" ColumnName="coordenada2Y" />
+          <ScalarProperty Name="coordenada3X" ColumnName="coordenada3X" />
+          <ScalarProperty Name="coordenada3Y" ColumnName="coordenada3Y" />
+          <ScalarProperty Name="coordenada4X" ColumnName="coordenada4X" />
+          <ScalarProperty Name="coordenada4Y" ColumnName="coordenada4Y" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

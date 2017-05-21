@@ -887,5 +887,60 @@ namespace Persistencia.Modelo
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistrarPersona_Result>("RegistrarPersona", usuarioParameter, passwordParameter, primerNombreParameter, segundoNombreParameter, primerApellidoParameter, segundoApellidoParameter, tipoDocumentoParameter, numeroDocumentoParameter, emailParameter, telefonoFijoParameter, telefonoMovilParameter, fechaNacimientoParameter);
         }
+    
+        public virtual ObjectResult<lisatadoProductos_Result> lisatadoProductos(Nullable<int> idCategoria, string nombre, Nullable<int> idProductor, Nullable<int> idZona, Nullable<int> idPuntoVenta)
+        {
+            var idCategoriaParameter = idCategoria.HasValue ?
+                new ObjectParameter("idCategoria", idCategoria) :
+                new ObjectParameter("idCategoria", typeof(int));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var idProductorParameter = idProductor.HasValue ?
+                new ObjectParameter("idProductor", idProductor) :
+                new ObjectParameter("idProductor", typeof(int));
+    
+            var idZonaParameter = idZona.HasValue ?
+                new ObjectParameter("idZona", idZona) :
+                new ObjectParameter("idZona", typeof(int));
+    
+            var idPuntoVentaParameter = idPuntoVenta.HasValue ?
+                new ObjectParameter("idPuntoVenta", idPuntoVenta) :
+                new ObjectParameter("idPuntoVenta", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<lisatadoProductos_Result>("lisatadoProductos", idCategoriaParameter, nombreParameter, idProductorParameter, idZonaParameter, idPuntoVentaParameter);
+        }
+    
+        public virtual ObjectResult<listadoProductos_Result> listadoProductos(Nullable<int> idCategoria, string nombre, Nullable<int> idProductor, Nullable<int> idZona, Nullable<int> idPuntoVenta)
+        {
+            var idCategoriaParameter = idCategoria.HasValue ?
+                new ObjectParameter("idCategoria", idCategoria) :
+                new ObjectParameter("idCategoria", typeof(int));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var idProductorParameter = idProductor.HasValue ?
+                new ObjectParameter("idProductor", idProductor) :
+                new ObjectParameter("idProductor", typeof(int));
+    
+            var idZonaParameter = idZona.HasValue ?
+                new ObjectParameter("idZona", idZona) :
+                new ObjectParameter("idZona", typeof(int));
+    
+            var idPuntoVentaParameter = idPuntoVenta.HasValue ?
+                new ObjectParameter("idPuntoVenta", idPuntoVenta) :
+                new ObjectParameter("idPuntoVenta", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listadoProductos_Result>("listadoProductos", idCategoriaParameter, nombreParameter, idProductorParameter, idZonaParameter, idPuntoVentaParameter);
+        }
+    
+        public virtual ObjectResult<listaZonas_Result> listaZonas()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listaZonas_Result>("listaZonas");
+        }
     }
 }

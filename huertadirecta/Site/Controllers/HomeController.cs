@@ -23,6 +23,11 @@ namespace Site.Controllers
             return View("../../Views/Usuario/Registrar");
         }
 
+        public ActionResult Tienda()
+        {
+            return View("../../Views/Tienda/ListadoProductos");
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
