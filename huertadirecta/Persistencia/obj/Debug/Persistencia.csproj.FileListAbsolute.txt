@@ -13,6 +13,6 @@ C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\Excepciones.pdb
 C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\Validadores.pdb
 C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\es\EntityFramework.resources.dll
 C:\huertadirecta\fuentes\huertadirecta\Persistencia\bin\es\EntityFramework.SqlServer.resources.dll
+C:\huertadirecta\fuentes\huertadirecta\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache
 C:\huertadirecta\fuentes\huertadirecta\Persistencia\obj\Debug\Persistencia.dll
 C:\huertadirecta\fuentes\huertadirecta\Persistencia\obj\Debug\Persistencia.pdb
-C:\huertadirecta\fuentes\huertadirecta\Persistencia\obj\Debug\Persistencia.csprojResolveAssemblyReference.cache

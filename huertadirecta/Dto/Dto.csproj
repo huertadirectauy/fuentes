@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="claveValor.cs" />
+    <Compile Include="filaTabla.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="productoFiltro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

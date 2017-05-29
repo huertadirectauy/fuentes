@@ -1,18 +1,24 @@
-﻿$(window).load(function () {
+﻿var galeria; //objeto global a la pagina conservar en memoria
+$(window).load(function () {
     cargarZonas();
-    $("#btnRegistrar").click(function () {       
+    $("#btnBuscar").click(function () {
         var llamadaAjax = new HAjax();
         llamadaAjax.url = '/producto/ListaProductos';
         llamadaAjax.method = 'POST';
         llamadaAjax.data = {
-            idCategoria: $("#txt").val(),
-            nombre: $("#txt").val(),
-            idProductor: $("#txt").val(),
-            idZona: $("#txt").val(),
-            idPuntoVenta: 1 
+            idCategoria: -1,
+            nombre: $("#txtNombreProducto").val(),
+            idProductor: -1,
+            idZona: $("#cmbZona").val(),
+            idPuntoVenta: -1 
             }
         llamadaAjax.success = function (data) {
-            alert(data.mensaje);
+            galeria = new Galeria();
+            galeria.columnas = 3;
+            galeria.contenedor = "tablaProductos";
+            galeria.contenedorPaginado = "tablaPaginado";
+            galeria.data = data;
+            galeria.construir();
         }
 
         llamadaAjax.llamar();

@@ -170,3 +170,22 @@ a:link{
     padding-bottom:5px !important;
     padding-left:10px !important;
 }
+
+.responsive-image {
+  height: auto;
+  width: 100%;
+}
+
+.rowWithBottomMargin {
+    margin-bottom:10px;
+    margin-right:20px;
+    text-align:right;
+}
+
+.arrowPager {
+    background-color: transparent;
+    color: #5d8625;
+    border: none;
+    margin-left:5px;
+    margin-right:5px;
+}

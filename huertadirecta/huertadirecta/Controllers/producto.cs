@@ -7,16 +7,29 @@ using System.Web.Http;
 namespace producto.Controllers{ 
 public class productoController:ApiController{
 
-        public List<Dto.producto> listaProductos(Dto.productoFiltro filtro)
+        public List<Dto.filaTabla> listaProductos(Dto.productoFiltro filtro)
         {
             List<Dto.producto> resultado = new List<Dto.producto>();
+            List<Dto.filaTabla> tabla = new List<Dto.filaTabla>();
+            Dto.filaTabla fila;
+
             try
             {
                 Logica.producto logica = new Logica.producto();
                 resultado = logica.listaProductos(filtro);
+
+                foreach (var prod in resultado)
+                {
+                    fila = new Dto.filaTabla();
+                    fila.imagen = "/Content/default.jpg";//prod.imagenes[0].ToString(); //base 64, como convferir en js ?
+                    fila.descripcion1 = prod.nombre;
+                    fila.descripcion2 = prod.nombreProductor;
+                    fila.descripcion3 = string.Format("{0} {1} X {2}", prod.moneda, prod.precio, prod.tipoUnidad);
+                    tabla.Add(fila);
+                }
             }
             catch (Exception ex) { return null; }
-            return resultado;
+            return tabla;
         }
 
 public Dto.Resultado EscribirProducto(Dto.producto dto){ 

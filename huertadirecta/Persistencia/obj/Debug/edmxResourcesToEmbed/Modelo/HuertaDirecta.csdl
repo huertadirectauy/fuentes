@@ -470,7 +470,7 @@
     <Property Type="Int32" Name="codigoTipoUnidad" Nullable="true" />
     <Property Type="String" Name="textoTipoUnidad" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="nombreProductor" Nullable="true" MaxLength="100" />
-    <Property Type="Binary" Name="imagen" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="imagen" Nullable="true" />
   </ComplexType>
   <ComplexType Name="listaZonas_Result">
     <Property Type="Int32" Name="idZona" Nullable="false" />

@@ -18,7 +18,7 @@ public class Producto{
                         filtro.idProductor,
                         filtro.idZona,
                         filtro.idPuntoVenta).Select(x => new Dto.producto()
-                    {
+                        {
                         id = x.id,
                         idCategoria = x.idCategoria,
                         nombre = (x.nombre == null) ? "" : (String)x.nombre,
@@ -36,11 +36,11 @@ public class Producto{
         } catch (Exception ex) { throw new PersistenciaException(ex.Message); }
     }
 
-        private List<byte[]> crearListaImagenes(byte[] img)
+        private List<byte[]> crearListaImagenes(string img)
         {
             List<byte[]> imgs = new List<byte[]>();
 
-            imgs.Add(img);
+            imgs.Add(Convert.FromBase64String(img));
 
             return imgs;
         }
