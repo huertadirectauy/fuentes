@@ -19,6 +19,10 @@
         llamadaAjax.data = { usuario: $("#txtUsuario").val(), password: $("#txtPassword").val() };
         llamadaAjax.success = function (data) {
             alert(data.mensaje);
+            $("#navBarLinkRegistrar").hide();
+            $("#navBarLinkLogin").hide();
+            $("#navBarLinkCarrito").show();
+            $("#navBarLinkPedidos").show();
         }
 
         llamadaAjax.llamar();

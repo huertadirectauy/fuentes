@@ -1,4 +1,3 @@
-C:\huertadirecta\fuentes\huertadirecta\huertadirecta\obj\Debug\Api.csprojResolveAssemblyReference.cache
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\ApplicationInsights.config
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\roslyn\csc.exe
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -117,5 +116,6 @@ C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\es\Microsoft.Owin.Secur
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\bin\es\System.Web.Http.Owin.resources.dll
+C:\huertadirecta\fuentes\huertadirecta\huertadirecta\obj\Debug\Api.csprojResolveAssemblyReference.cache
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\obj\Debug\huertadirecta.dll
 C:\huertadirecta\fuentes\huertadirecta\huertadirecta\obj\Debug\huertadirecta.pdb

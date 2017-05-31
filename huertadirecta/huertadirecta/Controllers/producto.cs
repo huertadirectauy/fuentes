@@ -6,7 +6,7 @@ using System.Web.Http;
 
 namespace producto.Controllers{ 
 public class productoController:ApiController{
-
+        
         public List<Dto.filaTabla> listaProductos(Dto.productoFiltro filtro)
         {
             List<Dto.producto> resultado = new List<Dto.producto>();
@@ -21,6 +21,7 @@ public class productoController:ApiController{
                 foreach (var prod in resultado)
                 {
                     fila = new Dto.filaTabla();
+                    fila.id = prod.id;
                     fila.imagen = "/Content/default.jpg";//prod.imagenes[0].ToString(); //base 64, como convferir en js ?
                     fila.descripcion1 = prod.nombre;
                     fila.descripcion2 = prod.nombreProductor;
@@ -32,7 +33,20 @@ public class productoController:ApiController{
             return tabla;
         }
 
-public Dto.Resultado EscribirProducto(Dto.producto dto){ 
+        public Dto.producto obtenerProducto(int id)
+        {
+            Dto.producto producto = new Dto.producto();
+
+            try
+            {
+                Logica.producto logica = new Logica.producto();
+                producto = logica.obtenerProducto(id);
+            }
+            catch (Exception ex) { return null; }
+            return producto;
+        }
+
+        public Dto.Resultado EscribirProducto(Dto.producto dto){ 
 Dto.Resultado resultado=new Dto.Resultado(); 
 try { 
 Logica.producto logica = new Logica.producto(); 

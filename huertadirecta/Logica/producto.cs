@@ -10,9 +10,18 @@ public class producto{
             try { 
                 return (new Persistencia.Producto()).listaProductos(filtro); 
                 }catch(Exception ex){throw new LogicaException(ex.Message);} 
-        } 
- 
-public Dto.Resultado Escribirproducto(Dto.producto dto){ 
+        }
+
+        public Dto.producto obtenerProducto(int id)
+        {
+            try
+            {
+                return (new Persistencia.Producto()).obtenerProducto(id);
+            }
+            catch (Exception ex) { throw new LogicaException(ex.Message); }
+        }
+
+        public Dto.Resultado Escribirproducto(Dto.producto dto){ 
 try { 
 return (new Persistencia.Producto()).Escribirproducto(dto); 
 }catch(Exception ex){throw new LogicaException(ex.Message);} 

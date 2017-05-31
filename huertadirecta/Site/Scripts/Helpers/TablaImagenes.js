@@ -7,6 +7,7 @@
     this.filas = 1;
     this.paginaActual = 1;
     this.cantidadPaginas = 0;
+    this.functionClick = "ver";
 }
 
 Galeria.prototype.construir = function () {
@@ -23,6 +24,8 @@ Galeria.prototype.construir = function () {
     }
 
     //se agrega paginador
+    $("#" + this.contenedorPaginado).html("");
+
     textoPaginas = "1 de " + this.cantidadPaginas;
     htmlTemp='<div class="row rowWithBottomMargin">';
     htmlTemp=htmlTemp+'<div class="col-md-3"></div>';
@@ -50,8 +53,6 @@ Galeria.prototype.construir = function () {
 }
 
 Galeria.prototype.paginado = function (direccion) {
-    this.paginaActual
-
     var htmlTemp = "";
     var contadorColumnas = 0;
     var contIni = 0;
@@ -124,7 +125,9 @@ Galeria.prototype.construirTabla = function () {
         htmlTemp = htmlTemp + '<div class="col-md-3">';
         htmlTemp = htmlTemp + '<div class="row">';
         htmlTemp = htmlTemp + '<div class="col-md-10">';
+        htmlTemp = htmlTemp + '<a href="#" onclick="' + this.functionClick + "(" + this.data[i].id + ')">'
         htmlTemp = htmlTemp + '<img width="100" class="responsive-image" src="' + this.data[i].imagen + '" />';
+        htmlTemp = htmlTemp + '</a>';
         htmlTemp = htmlTemp + '</div>';
         htmlTemp = htmlTemp + '</div>';
         htmlTemp = htmlTemp + '<div class="row">';

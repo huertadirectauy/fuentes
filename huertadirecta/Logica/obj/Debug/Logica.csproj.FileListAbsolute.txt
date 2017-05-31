@@ -1,3 +1,4 @@
+C:\huertadirecta\fuentes\huertadirecta\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
 C:\huertadirecta\fuentes\huertadirecta\Logica\bin\Logica.dll
 C:\huertadirecta\fuentes\huertadirecta\Logica\bin\Logica.pdb
 C:\huertadirecta\fuentes\huertadirecta\Logica\bin\Dto.dll
@@ -11,6 +12,5 @@ C:\huertadirecta\fuentes\huertadirecta\Logica\bin\Excepciones.pdb
 C:\huertadirecta\fuentes\huertadirecta\Logica\bin\Validadores.pdb
 C:\huertadirecta\fuentes\huertadirecta\Logica\bin\EntityFramework.xml
 C:\huertadirecta\fuentes\huertadirecta\Logica\bin\es\EntityFramework.resources.dll
-C:\huertadirecta\fuentes\huertadirecta\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
 C:\huertadirecta\fuentes\huertadirecta\Logica\obj\Debug\Logica.dll
 C:\huertadirecta\fuentes\huertadirecta\Logica\obj\Debug\Logica.pdb

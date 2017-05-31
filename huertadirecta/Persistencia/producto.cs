@@ -36,6 +36,36 @@ public class Producto{
         } catch (Exception ex) { throw new PersistenciaException(ex.Message); }
     }
 
+        public Dto.producto obtenerProducto(int id)
+        {
+
+            Dto.producto dto = new Dto.producto();
+
+            try
+            {
+                using (var objectContext = new HuertaDirectaEntities())
+                {
+                    dto = objectContext.obtenerProducto(id).Select(x => new Dto.producto()
+                        {
+                            id = x.id,
+                            idProductor = x.idProductor,
+                            idCategoria = x.idCategoria,
+                            nombre = (x.nombre == null) ? "" : x.nombre,
+                            descripcion = (x.descripcion == null) ? "" : x.descripcion,
+                            precio = (x.precio == null) ? 0 : (decimal)x.precio,
+                            codigoMoneda = (x.codigoMoneda == null) ? -1 : (int)x.codigoMoneda,
+                            moneda = x.moneda,
+                            condigoTipoUnidad = (x.codigoTipoUnidad == null) ? -1 : (int)x.codigoTipoUnidad,
+                            tipoUnidad = x.textoTipoUnidad,
+                            nombreProductor = x.nombreProductor,
+                            imagenes = crearListaImagenes(x.imagen)
+                        }).ToList().FirstOrDefault();
+                }
+                return dto;
+            }
+            catch (Exception ex) { throw new PersistenciaException(ex.Message); }
+        }
+
         private List<byte[]> crearListaImagenes(string img)
         {
             List<byte[]> imgs = new List<byte[]>();

@@ -258,6 +258,9 @@
       <Parameter Name="idPuntoVenta" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="listaZonas" ReturnType="Collection(HuertaDirectaModel.listaZonas_Result)" />
+    <FunctionImport Name="obtenerProducto" ReturnType="Collection(HuertaDirectaModel.obtenerProducto_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="barrioGuardar_Result">
     <Property Type="Int32" Name="resultado" Nullable="false" />
@@ -485,5 +488,19 @@
     <Property Type="Int32" Name="coordenada3Y" Nullable="true" />
     <Property Type="Int32" Name="coordenada4X" Nullable="true" />
     <Property Type="Int32" Name="coordenada4Y" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="obtenerProducto_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="idCategoria" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="5000" />
+    <Property Type="Decimal" Name="precio" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="codigoMoneda" Nullable="true" />
+    <Property Type="String" Name="moneda" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="codigoTipoUnidad" Nullable="true" />
+    <Property Type="String" Name="textoTipoUnidad" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="nombreProductor" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="imagen" Nullable="true" />
+    <Property Type="Int32" Name="idProductor" Nullable="false" />
   </ComplexType>
 </Schema>

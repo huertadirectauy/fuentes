@@ -143,6 +143,9 @@
     <Compile Include="Modelo\monedaLeer_Result.cs">
       <DependentUpon>HuertaDirecta.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\obtenerProducto_Result.cs">
+      <DependentUpon>HuertaDirecta.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\PaisGuardar_Result.cs">
       <DependentUpon>HuertaDirecta.tt</DependentUpon>
     </Compile>

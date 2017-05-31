@@ -27,7 +27,7 @@ namespace Site.Controllers
         {
             return View("../../Views/Tienda/ListadoProductos");
         }
-
+                
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
