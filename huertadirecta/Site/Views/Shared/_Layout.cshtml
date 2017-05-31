@@ -10,6 +10,7 @@
     <script src="~/Scripts/Helpers/Ajax.js"></script>
     <script src="~/Scripts/Helpers/Combos.js"></script>
     <script src="~/Scripts/Helpers/TablaImagenes.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD32r0FSpryYdKLs9znVWufgHfZwkUJQic&callback=initMap"></script>
 </head>
 <body>    
     <div id="header" class="Header">
@@ -21,15 +22,18 @@
                
             </div>
             <div class="col-md-6 navBarContLink">
-                <a class="navBarLink" href="/Home/Tienda">Tienda</a>
+                <a class="navBarLink" href="/Home/Tienda"><span class="glyphicon glyphicon-"></span>Tienda</a>
             
                 <a class="navBarLink" href="/Home/About">Productores</a>
            
-                <a class="navBarLink" href="/Home/Contact">Carrito</a>
+                <a id="navBarLinkCarrito" class="navBarLink" href="/Home/Contact" style="display:none;"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a>
           
-                <a class="navBarLink" href="/Home/Login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a>
+                <a id="navBarLinkPedidos" class="navBarLink" href="/Home/Contact" style="display:none;">Pedidos</a>
+
+
+                <a id="navBarLinkLogin" class="navBarLink" href="/Home/Login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a>
             
-                <a class="navBarLink" href="/Home/Registrar"><span class="glyphicon glyphicon-user"></span> Registrarse</a>
+                <a id="navBarLinkRegistrar" class="navBarLink" href="/Home/Registrar"><span class="glyphicon glyphicon-user"></span> Registrarse</a>
             </div> 
         </div>
     </div>

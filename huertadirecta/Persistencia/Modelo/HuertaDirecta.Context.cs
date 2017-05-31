@@ -942,5 +942,14 @@ namespace Persistencia.Modelo
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listaZonas_Result>("listaZonas");
         }
+    
+        public virtual ObjectResult<obtenerProducto_Result> obtenerProducto(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<obtenerProducto_Result>("obtenerProducto", idParameter);
+        }
     }
 }

@@ -96,6 +96,9 @@
     <Parameter Name="id" Type="int" Mode="In" />
     <Parameter Name="nombre" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="obtenerProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
   <Function Name="PaisGuardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="int" Mode="In" />
     <Parameter Name="nombre" Type="varchar" Mode="In" />

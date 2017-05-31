@@ -10,44 +10,86 @@
 <div id="content" class="body-content">
     <h2>Tienda online</h2>
     </br>
-    <div class="row">
-        <div class="col-md-1"></div>
-
-        <section id="listaProductosForm">
-            <form class="form-horizontal">
+    <div id="detalle" style="display:none">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <div id="galeriaImagenes">
+                    <img src="~/Content/default.jpg" class="imgProductoDetalle" />"
+                </div>
+            </div>
+            <div class="col-md-4">
                 <div>
-                    <div class="col-md-5">
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="txtNombreProducto">Que estas buscando?</label>
-                            <div class="col-md-8">
-                                <input type="text" id="txtNombreProducto" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="cmbZona">Estas en?</label>
-                            <div class="col-md-8">
-                                <select id="cmbZona" class="form-control"></select>
-                            </div>
-                        </div>                                         
-                        <div class="form-group">
-                            <div class="col-md-offset-10 col-md-10">
-                                <input type="button" id="btnBuscar" value="Buscar" class="btn btn-default" />
-                            </div>
-                        </div>
-                    </div>
-                </div>                
-            </form>
-        </section>
-
-        <div class="col-md-5"></div>
+                    <label class="control-label" id="txtNombreProductoDetalle"></label>
+                </div>
+                <div>
+                    <label class="control-label" id="txtNombreProductorDetalle"></label>
+                </div>
+                <div>
+                    <label class="control-label" id="txtPrecioProductoDetalle"></label>
+                </div>               
+                <div>
+                    <input type="text" id="txtCantidadProducto" class="form-control displayInline" value="1" style="width:10%;" />
+                    <input type="button" id="btnAgregar" value="Agregar al carrito" class="btn btn-default displayBlock" />
+                </div>
+                <div>
+                    <label class="control-label" id="txtDescripcionDetalle"></label>
+                </div>
+            </div>
+        </div>
         <div class="col-md-1"></div>
+        <br/>
     </div>
+    <div id="listado">
+        <div class="row" id="rowFormBusqueda">
+            <div class="col-md-1"></div>
 
-    <div class="row">
-        <h3>Productos</h3>
-        <div id="tablaPaginado">
+            <section id="listaProductosForm">
+                <form class="form-horizontal">
+                    <div>
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="txtNombreProducto">Que estas buscando?</label>
+                                    <div class="col-md-8">
+                                        <input type="text" id="txtNombreProducto" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="cmbZona">Estas en?</label>
+                                    <div class="col-md-8">
+                                        <select id="cmbZona" class="form-control"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-offset-10 col-md-10">
+                                        <input type="button" id="btnBuscar" value="Buscar" class="btn btn-default" />
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </form>
+            </section>
+
+            <div class="col-md-5"></div>
+            <div class="col-md-1"></div>
         </div>
-        <div id="tablaProductos">
+
+        <div class="row">
+            <h3 id="tituloListaProductos">Productos</h3>
+            <div id="tablaPaginado">
+            </div>
+            <div id="tablaProductos">
+            </div>
         </div>
     </div>
-
+    <form id="frmuploadimg">
+        <input type="file" id="img" />
+        <input type="button" id="btnuploadimg"/>
+    </form>
+</div>

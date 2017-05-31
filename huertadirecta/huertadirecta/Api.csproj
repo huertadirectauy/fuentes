@@ -47,8 +47,7 @@
     <Reference Include="Dto">
       <HintPath>..\Dto\bin\Dto.dll</HintPath>
     </Reference>
-    <Reference Include="Logica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Logica">
       <HintPath>..\Logica\bin\Logica.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
