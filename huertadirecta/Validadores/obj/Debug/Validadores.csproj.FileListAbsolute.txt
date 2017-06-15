@@ -2,3 +2,4 @@ C:\huertadirecta\fuentes\huertadirecta\Validadores\bin\Validadores.dll
 C:\huertadirecta\fuentes\huertadirecta\Validadores\bin\Validadores.pdb
 C:\huertadirecta\fuentes\huertadirecta\Validadores\obj\Debug\Validadores.dll
 C:\huertadirecta\fuentes\huertadirecta\Validadores\obj\Debug\Validadores.pdb
+C:\huertadirecta\fuentes\huertadirecta\Validadores\obj\Debug\Validadores.csprojResolveAssemblyReference.cache
