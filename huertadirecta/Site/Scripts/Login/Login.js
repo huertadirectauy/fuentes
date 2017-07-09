@@ -13,6 +13,7 @@
                 console.log(err);
             }
         });*/
+        
         var llamadaAjax=new HAjax();
         llamadaAjax.url = '/Usuario/Login';
         llamadaAjax.method = 'POST';

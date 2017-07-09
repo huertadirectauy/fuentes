@@ -96,19 +96,20 @@ function verProducto(id) {
     llamadaAjax.method = 'POST';
     llamadaAjax.data = {};
     llamadaAjax.success = function (data) {
-        cargarPantallaProducto(data);
+        cargarPantallaProducto(idProductoActual,data);
     }
 
     llamadaAjax.llamar();
 }
 
-function cargarPantallaProducto(data) {
+function cargarPantallaProducto(id,data) {
     $("#rowFormBusqueda").hide();
     $("#detalle").show();
     $("#txtNombreProductoDetalle").text(data.nombre);
     $("#txtPrecioProductoDetalle").text(data.moneda + " " + data.precio + " " + data.tipoUnidad);
     $("#txtNombreProductorDetalle").text(data.nombreProductor);
     $("#txtDescripcionDetalle").text(data.descripcion);
+    $("#idProductoDetalle").val(id);
 
     //cargo los productos del productor
     cargarProductosProductor(data.idProductor);
@@ -116,4 +117,23 @@ function cargarPantallaProducto(data) {
 
 function agregar() {
     //to do ir al servidor y guardar en session
+    var itemsCarrito = [];
+    if (sessionStorage.getItem("itemsCarrito") != null) {
+        var itemsCarrito = JSON.parse(sessionStorage.getItem("itemsCarrito"));
+        /*for (elem in jsonCarrito) {
+            itemsCarrito.push(obj[elem]); //convierto a array
+        }*/
+    }
+
+    //le agrego un item nuevo
+    var it = {};
+    it.id=$("#idProductoDetalle").val();
+    it.imagen = $("#imgProductoDetalle").text();
+    it.descripcion1=$("#txtNombreProductoDetalle").text();
+    it.descripcion2 = $("#txtNombreProductorDetalle").text();
+    it.descripcion3 = $("#txtPrecioProductoDetalle").text();
+    it.cantidad=$("#txtCantidadProducto").val();
+    
+    itemsCarrito[itemsCarrito.length] = it;
+    sessionStorage.setItem("itemsCarrito", JSON.stringify(itemsCarrito)); //guardo como string json
 }

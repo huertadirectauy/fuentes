@@ -41,5 +41,10 @@ namespace Site.Controllers
 
             return View();
         }
+
+        public ActionResult Carrito()
+        {
+            return View("../../Views/Tienda/Carrito");
+        }
     }
 }

@@ -14,8 +14,8 @@ Galeria.prototype.construir = function () {
     var htmlTemp = "";
     var textoPaginas = "";
     
-    var cantidadPaginasEntera = Math.trunc(this.data.length / (this.columnas + this.filas));
-    var cantidadPaginasDecimal = (this.data.length / (this.columnas + this.filas)) - cantidadPaginasEntera;
+    var cantidadPaginasEntera = Math.trunc(this.data.length / (this.columnas * this.filas));
+    var cantidadPaginasDecimal = (this.data.length / (this.columnas * this.filas)) - cantidadPaginasEntera;
 
     if (cantidadPaginasDecimal > 0) {
         this.cantidadPaginas = cantidadPaginasEntera + 1
@@ -111,7 +111,7 @@ Galeria.prototype.construirTabla = function () {
     }    
 
     if (this.data.length < (this.filas * this.columnas) ) { //si la cantidad de items es menor que la cantidad de items de una pagina itero hasta lo item final
-        contFin = this.data.length;
+        contFin = this.data.length-1;
     } else {
         contFin = (contIni + (this.filas * this.columnas))-1;
     }    
