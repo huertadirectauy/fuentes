@@ -136,4 +136,5 @@ function agregar() {
     
     itemsCarrito[itemsCarrito.length] = it;
     sessionStorage.setItem("itemsCarrito", JSON.stringify(itemsCarrito)); //guardo como string json
+    $("#lblCartCount").text(itemsCarrito.length);
 }

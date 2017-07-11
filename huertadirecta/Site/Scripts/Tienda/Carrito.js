@@ -62,9 +62,7 @@ function borrar(idProductoCarrito) {
     if (encontro) {
         itemsCarrito.splice(i, 1);
         //if (itemsCarrito.length>1)
-            armarCarrito(itemsCarrito); //reconstruyo con un item menos
-
-
+        armarCarrito(itemsCarrito); //reconstruyo con un item menos
         sessionStorage.setItem("itemsCarrito", JSON.stringify(itemsCarrito));
     }
 
@@ -80,8 +78,11 @@ function armarCarrito(items) {
 
     carrito.construir();
 
-    if (carrito.data.length!=0)
+    if (carrito.data.length!=0){
         $("#productosCarrito").show();
-    else
+        $("#lblCartCount").text(carrito.data.length);
+    }else{
         $("#productosCarrito").hide();
+        $("#lblCartCount").text("");
+    }
 }
