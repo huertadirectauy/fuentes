@@ -85,4 +85,19 @@ function armarCarrito(items) {
         $("#productosCarrito").hide();
         $("#lblCartCount").text("");
     }
+
+    //calculo total
+    var total = 0;
+    for (i = 0; i < carrito.data.length; i++) {
+        total += parseFloat(carrito.data[i].descripcion3.split(" ")[1]) * carrito.data[i].cantidad;
+    }
+
+    if (total > 0) {
+        $("#btnComprar").show();
+        $("#totalCarrito").text("Total $" + total);
+    } else {
+        $("#btnComprar").hide();
+        $("#totalCarrito").text("No hay productos en el carrito");
+    }
+
 }
