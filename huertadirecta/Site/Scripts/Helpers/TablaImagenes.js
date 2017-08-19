@@ -126,7 +126,7 @@ Galeria.prototype.construirTabla = function () {
         htmlTemp = htmlTemp + '<div class="row">';
         htmlTemp = htmlTemp + '<div class="col-md-10">';
         htmlTemp = htmlTemp + '<a href="#" onclick="' + this.functionClick + "(" + this.data[i].id + ')">'
-        htmlTemp = htmlTemp + '<img width="100" class="responsive-image" src="' + this.data[i].imagen + '" />';
+        htmlTemp = htmlTemp + '<img width="100" class="responsive-image" src="data:image/png;base64,' + this.data[i].imagen + '" />';
         htmlTemp = htmlTemp + '</a>';
         htmlTemp = htmlTemp + '</div>';
         htmlTemp = htmlTemp + '</div>';

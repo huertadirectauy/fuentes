@@ -58,24 +58,34 @@ public class Producto{
                             condigoTipoUnidad = (x.codigoTipoUnidad == null) ? -1 : (int)x.codigoTipoUnidad,
                             tipoUnidad = x.textoTipoUnidad,
                             nombreProductor = x.nombreProductor,
-                            imagenes = crearListaImagenes(x.imagen)
-                        }).ToList().FirstOrDefault();
+                            imagenes = crearListaImagenes(x.imagen),
+                            imagenesBase64= crearListaImagenesBase64(x.imagen),
+                    }).ToList().FirstOrDefault();
                 }
                 return dto;
             }
             catch (Exception ex) { throw new PersistenciaException(ex.Message); }
         }
 
-        private List<byte[]> crearListaImagenes(string img)
+        private List<byte[]> crearListaImagenes(byte[] imagen)
         {
             List<byte[]> imgs = new List<byte[]>();
 
-            imgs.Add(Convert.FromBase64String(img));
+            imgs.Add(imagen);
 
             return imgs;
         }
-         
-public Dto.Resultado Escribirproducto(Dto.producto dto){ 
+
+        private List<string> crearListaImagenesBase64(byte[] imagen)
+        {
+            List<string> imgs = new List<string>();
+
+            imgs.Add(Convert.ToBase64String(imagen));
+
+            return imgs;
+        }
+
+        public Dto.Resultado Escribirproducto(Dto.producto dto){ 
 try { 
     Dto.Resultado result=new Dto.Resultado(); 
     using (var objectContext = new HuertaDirectaEntities()) { 

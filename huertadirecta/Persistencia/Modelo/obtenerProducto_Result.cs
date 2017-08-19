@@ -14,6 +14,7 @@ namespace Persistencia.Modelo
     public partial class obtenerProducto_Result
     {
         public int id { get; set; }
+        public int idProductor { get; set; }
         public int idCategoria { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
@@ -23,7 +24,6 @@ namespace Persistencia.Modelo
         public Nullable<int> codigoTipoUnidad { get; set; }
         public string textoTipoUnidad { get; set; }
         public string nombreProductor { get; set; }
-        public string imagen { get; set; }
-        public int idProductor { get; set; }
+        public byte[] imagen { get; set; }
     }
 }

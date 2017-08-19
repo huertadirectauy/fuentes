@@ -95,14 +95,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="imagenGuardar" FunctionName="HuertaDirectaModel.Store.imagenGuardar">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="HuertaDirectaModel.imagenGuardar_Result">
-          <ScalarProperty Name="resultado" ColumnName="resultado" />
-          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="imagenLeer" FunctionName="HuertaDirectaModel.Store.imagenLeer">
       <ResultMapping>
         <ComplexTypeMapping TypeName="HuertaDirectaModel.imagenLeer_Result">
@@ -333,23 +325,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="listadoProductos" FunctionName="HuertaDirectaModel.Store.listadoProductos">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="HuertaDirectaModel.listadoProductos_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="precio" ColumnName="precio" />
-          <ScalarProperty Name="codigoMoneda" ColumnName="codigoMoneda" />
-          <ScalarProperty Name="moneda" ColumnName="moneda" />
-          <ScalarProperty Name="codigoTipoUnidad" ColumnName="codigoTipoUnidad" />
-          <ScalarProperty Name="textoTipoUnidad" ColumnName="textoTipoUnidad" />
-          <ScalarProperty Name="nombreProductor" ColumnName="nombreProductor" />
-          <ScalarProperty Name="imagen" ColumnName="imagen" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="listaZonas" FunctionName="HuertaDirectaModel.Store.listaZonas">
       <ResultMapping>
         <ComplexTypeMapping TypeName="HuertaDirectaModel.listaZonas_Result">
@@ -368,9 +343,17 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="obtenerProducto" FunctionName="HuertaDirectaModel.Store.obtenerProducto">
+    <FunctionImportMapping FunctionImportName="imagenGuardar" FunctionName="HuertaDirectaModel.Store.imagenGuardar">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="HuertaDirectaModel.obtenerProducto_Result">
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.imagenGuardar_Result1">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="listadoProductos" FunctionName="HuertaDirectaModel.Store.listadoProductos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.listadoProductos_Result">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -382,7 +365,24 @@
           <ScalarProperty Name="textoTipoUnidad" ColumnName="textoTipoUnidad" />
           <ScalarProperty Name="nombreProductor" ColumnName="nombreProductor" />
           <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="obtenerProducto" FunctionName="HuertaDirectaModel.Store.obtenerProducto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HuertaDirectaModel.obtenerProducto_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="idProductor" ColumnName="idProductor" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="codigoMoneda" ColumnName="codigoMoneda" />
+          <ScalarProperty Name="moneda" ColumnName="moneda" />
+          <ScalarProperty Name="codigoTipoUnidad" ColumnName="codigoTipoUnidad" />
+          <ScalarProperty Name="textoTipoUnidad" ColumnName="textoTipoUnidad" />
+          <ScalarProperty Name="nombreProductor" ColumnName="nombreProductor" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

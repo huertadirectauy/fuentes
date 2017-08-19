@@ -110,6 +110,7 @@ function cargarPantallaProducto(id,data) {
     $("#txtNombreProductorDetalle").text(data.nombreProductor);
     $("#txtDescripcionDetalle").text(data.descripcion);
     $("#idProductoDetalle").val(id);
+    $("#imgProductoDetalle")[0].src = "data:image/png;base64," + data.imagenesBase64[0];
 
     //cargo los productos del productor
     cargarProductosProductor(data.idProductor);

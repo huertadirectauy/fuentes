@@ -15,5 +15,6 @@ namespace Dto {
         public string tipoUnidad { get; set; }
         public string nombreProductor { get; set; }
         public List<byte[]> imagenes { get; set; }
+        public List<string> imagenesBase64 { get; set; }
     } 
 } 

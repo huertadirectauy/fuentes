@@ -270,19 +270,6 @@ namespace Persistencia.Modelo
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<direccionLeer_Result>("direccionLeer", idParameter, latitudParameter, longitudParameter, manzanaParameter, solarParameter, aptoParameter, numeroParameter, codigoCalleParameter, codigoCalleEsquinaParameter, localidadParameter, codigoCiudadParameter, codigoProvinciaParameter, codigoPaisParameter);
         }
     
-        public virtual ObjectResult<imagenGuardar_Result> imagenGuardar(Nullable<int> id, string imagen)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(int));
-    
-            var imagenParameter = imagen != null ?
-                new ObjectParameter("imagen", imagen) :
-                new ObjectParameter("imagen", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<imagenGuardar_Result>("imagenGuardar", idParameter, imagenParameter);
-        }
-    
         public virtual ObjectResult<imagenLeer_Result> imagenLeer(Nullable<int> id, string imagen)
         {
             var idParameter = id.HasValue ?
@@ -888,7 +875,7 @@ namespace Persistencia.Modelo
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistrarPersona_Result>("RegistrarPersona", usuarioParameter, passwordParameter, primerNombreParameter, segundoNombreParameter, primerApellidoParameter, segundoApellidoParameter, tipoDocumentoParameter, numeroDocumentoParameter, emailParameter, telefonoFijoParameter, telefonoMovilParameter, fechaNacimientoParameter);
         }
     
-        public virtual ObjectResult<lisatadoProductos_Result> lisatadoProductos(Nullable<int> idCategoria, string nombre, Nullable<int> idProductor, Nullable<int> idZona, Nullable<int> idPuntoVenta)
+        public virtual int lisatadoProductos(Nullable<int> idCategoria, string nombre, Nullable<int> idProductor, Nullable<int> idZona, Nullable<int> idPuntoVenta)
         {
             var idCategoriaParameter = idCategoria.HasValue ?
                 new ObjectParameter("idCategoria", idCategoria) :
@@ -910,7 +897,25 @@ namespace Persistencia.Modelo
                 new ObjectParameter("idPuntoVenta", idPuntoVenta) :
                 new ObjectParameter("idPuntoVenta", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<lisatadoProductos_Result>("lisatadoProductos", idCategoriaParameter, nombreParameter, idProductorParameter, idZonaParameter, idPuntoVentaParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("lisatadoProductos", idCategoriaParameter, nombreParameter, idProductorParameter, idZonaParameter, idPuntoVentaParameter);
+        }
+    
+        public virtual ObjectResult<listaZonas_Result> listaZonas()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listaZonas_Result>("listaZonas");
+        }
+    
+        public virtual ObjectResult<imagenGuardar_Result1> imagenGuardar(Nullable<int> id, byte[] imagen)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var imagenParameter = imagen != null ?
+                new ObjectParameter("imagen", imagen) :
+                new ObjectParameter("imagen", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<imagenGuardar_Result1>("imagenGuardar", idParameter, imagenParameter);
         }
     
         public virtual ObjectResult<listadoProductos_Result> listadoProductos(Nullable<int> idCategoria, string nombre, Nullable<int> idProductor, Nullable<int> idZona, Nullable<int> idPuntoVenta)
@@ -936,11 +941,6 @@ namespace Persistencia.Modelo
                 new ObjectParameter("idPuntoVenta", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listadoProductos_Result>("listadoProductos", idCategoriaParameter, nombreParameter, idProductorParameter, idZonaParameter, idPuntoVentaParameter);
-        }
-    
-        public virtual ObjectResult<listaZonas_Result> listaZonas()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listaZonas_Result>("listaZonas");
         }
     
         public virtual ObjectResult<obtenerProducto_Result> obtenerProducto(Nullable<int> id)

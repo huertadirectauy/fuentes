@@ -242,6 +242,7 @@
     <Content Include="Scripts\Tienda\ListadoProductos.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\Login\Login.js" />
+    <Content Include="Views\Home\huertavideo.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

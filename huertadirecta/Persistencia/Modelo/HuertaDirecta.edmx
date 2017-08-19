@@ -75,7 +75,7 @@
         </Function>
         <Function Name="imagenGuardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
-          <Parameter Name="imagen" Type="varchar" Mode="In" />
+          <Parameter Name="imagen" Type="varbinary(max)" Mode="In" />
         </Function>
         <Function Name="imagenLeer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
@@ -332,10 +332,6 @@
             <Parameter Name="codigoProvincia" Mode="In" Type="Int32" />
             <Parameter Name="codigoPais" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="imagenGuardar" ReturnType="Collection(HuertaDirectaModel.imagenGuardar_Result)">
-            <Parameter Name="id" Mode="In" Type="Int32" />
-            <Parameter Name="imagen" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="imagenLeer" ReturnType="Collection(HuertaDirectaModel.imagenLeer_Result)">
             <Parameter Name="id" Mode="In" Type="Int32" />
             <Parameter Name="imagen" Mode="In" Type="String" />
@@ -506,12 +502,17 @@
             <Parameter Name="telefonoMovil" Mode="In" Type="String" />
             <Parameter Name="fechaNacimiento" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="lisatadoProductos" ReturnType="Collection(HuertaDirectaModel.lisatadoProductos_Result)">
+          <FunctionImport Name="lisatadoProductos">
             <Parameter Name="idCategoria" Mode="In" Type="Int32" />
             <Parameter Name="nombre" Mode="In" Type="String" />
             <Parameter Name="idProductor" Mode="In" Type="Int32" />
             <Parameter Name="idZona" Mode="In" Type="Int32" />
             <Parameter Name="idPuntoVenta" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="listaZonas" ReturnType="Collection(HuertaDirectaModel.listaZonas_Result)" />
+          <FunctionImport Name="imagenGuardar" ReturnType="Collection(HuertaDirectaModel.imagenGuardar_Result1)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="imagen" Mode="In" Type="Binary" />
           </FunctionImport>
           <FunctionImport Name="listadoProductos" ReturnType="Collection(HuertaDirectaModel.listadoProductos_Result)">
             <Parameter Name="idCategoria" Mode="In" Type="Int32" />
@@ -520,9 +521,8 @@
             <Parameter Name="idZona" Mode="In" Type="Int32" />
             <Parameter Name="idPuntoVenta" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="listaZonas" ReturnType="Collection(HuertaDirectaModel.listaZonas_Result)" />
           <FunctionImport Name="obtenerProducto" ReturnType="Collection(HuertaDirectaModel.obtenerProducto_Result)">
-          <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="barrioGuardar_Result">
@@ -713,31 +713,6 @@
           <Property Type="Int32" Name="resultado" Nullable="false" />
           <Property Type="String" Name="mensaje" Nullable="false" MaxLength="45" />
         </ComplexType>
-        <ComplexType Name="lisatadoProductos_Result">
-          <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="5000" />
-          <Property Type="Decimal" Name="precio" Nullable="true" Precision="18" Scale="0" />
-          <Property Type="Int32" Name="codigoMoneda" Nullable="true" />
-          <Property Type="String" Name="moneda" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="codigoTipoUnidad" Nullable="true" />
-          <Property Type="String" Name="textoTipoUnidad" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="nombreProductor" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="Int32" Name="idCategoria" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="listadoProductos_Result">
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="Int32" Name="idCategoria" Nullable="false" />
-          <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="5000" />
-          <Property Type="Decimal" Name="precio" Nullable="true" Precision="18" Scale="0" />
-          <Property Type="Int32" Name="codigoMoneda" Nullable="true" />
-          <Property Type="String" Name="moneda" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="codigoTipoUnidad" Nullable="true" />
-          <Property Type="String" Name="textoTipoUnidad" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="nombreProductor" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="imagen" Nullable="true" />
-        </ComplexType>
         <ComplexType Name="listaZonas_Result">
           <Property Type="Int32" Name="idZona" Nullable="false" />
           <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
@@ -752,7 +727,11 @@
           <Property Type="Int32" Name="coordenada4X" Nullable="true" />
           <Property Type="Int32" Name="coordenada4Y" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="obtenerProducto_Result">
+        <ComplexType Name="imagenGuardar_Result1">
+          <Property Type="Int32" Name="resultado" Nullable="false" />
+          <Property Type="String" Name="mensaje" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="listadoProductos_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="Int32" Name="idCategoria" Nullable="false" />
           <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
@@ -763,8 +742,21 @@
           <Property Type="Int32" Name="codigoTipoUnidad" Nullable="true" />
           <Property Type="String" Name="textoTipoUnidad" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="nombreProductor" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="imagen" Nullable="true" />
+          <Property Type="Binary" Name="imagen" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="obtenerProducto_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="Int32" Name="idProductor" Nullable="false" />
+          <Property Type="Int32" Name="idCategoria" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="5000" />
+          <Property Type="Decimal" Name="precio" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="codigoMoneda" Nullable="true" />
+          <Property Type="String" Name="moneda" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="codigoTipoUnidad" Nullable="true" />
+          <Property Type="String" Name="textoTipoUnidad" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="nombreProductor" Nullable="true" MaxLength="100" />
+          <Property Type="Binary" Name="imagen" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -863,14 +855,6 @@
                 <ScalarProperty Name="codigoCiudad" ColumnName="codigoCiudad" />
                 <ScalarProperty Name="codigoProvincia" ColumnName="codigoProvincia" />
                 <ScalarProperty Name="codigoPais" ColumnName="codigoPais" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="imagenGuardar" FunctionName="HuertaDirectaModel.Store.imagenGuardar">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="HuertaDirectaModel.imagenGuardar_Result">
-                <ScalarProperty Name="resultado" ColumnName="resultado" />
-                <ScalarProperty Name="mensaje" ColumnName="mensaje" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1104,23 +1088,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="listadoProductos" FunctionName="HuertaDirectaModel.Store.listadoProductos">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="HuertaDirectaModel.listadoProductos_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-                <ScalarProperty Name="precio" ColumnName="precio" />
-                <ScalarProperty Name="codigoMoneda" ColumnName="codigoMoneda" />
-                <ScalarProperty Name="moneda" ColumnName="moneda" />
-                <ScalarProperty Name="codigoTipoUnidad" ColumnName="codigoTipoUnidad" />
-                <ScalarProperty Name="textoTipoUnidad" ColumnName="textoTipoUnidad" />
-                <ScalarProperty Name="nombreProductor" ColumnName="nombreProductor" />
-                <ScalarProperty Name="imagen" ColumnName="imagen" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="listaZonas" FunctionName="HuertaDirectaModel.Store.listaZonas">
             <ResultMapping>
               <ComplexTypeMapping TypeName="HuertaDirectaModel.listaZonas_Result">
@@ -1139,9 +1106,17 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="obtenerProducto" FunctionName="HuertaDirectaModel.Store.obtenerProducto">
+          <FunctionImportMapping FunctionImportName="imagenGuardar" FunctionName="HuertaDirectaModel.Store.imagenGuardar">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="HuertaDirectaModel.obtenerProducto_Result">
+              <ComplexTypeMapping TypeName="HuertaDirectaModel.imagenGuardar_Result1">
+                <ScalarProperty Name="resultado" ColumnName="resultado" />
+                <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listadoProductos" FunctionName="HuertaDirectaModel.Store.listadoProductos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HuertaDirectaModel.listadoProductos_Result">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -1153,7 +1128,24 @@
                 <ScalarProperty Name="textoTipoUnidad" ColumnName="textoTipoUnidad" />
                 <ScalarProperty Name="nombreProductor" ColumnName="nombreProductor" />
                 <ScalarProperty Name="imagen" ColumnName="imagen" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="obtenerProducto" FunctionName="HuertaDirectaModel.Store.obtenerProducto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HuertaDirectaModel.obtenerProducto_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="idProductor" ColumnName="idProductor" />
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="codigoMoneda" ColumnName="codigoMoneda" />
+                <ScalarProperty Name="moneda" ColumnName="moneda" />
+                <ScalarProperty Name="codigoTipoUnidad" ColumnName="codigoTipoUnidad" />
+                <ScalarProperty Name="textoTipoUnidad" ColumnName="textoTipoUnidad" />
+                <ScalarProperty Name="nombreProductor" ColumnName="nombreProductor" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

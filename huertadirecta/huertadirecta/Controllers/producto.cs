@@ -22,7 +22,7 @@ public class productoController:ApiController{
                 {
                     fila = new Dto.filaTabla();
                     fila.id = prod.id;
-                    fila.imagen = "/Content/default.jpg";//prod.imagenes[0].ToString(); //base 64, como convferir en js ?
+                    fila.imagen = Convert.ToBase64String(prod.imagenes[0]); //base 64, como convferir en js ?
                     fila.descripcion1 = prod.nombre;
                     fila.descripcion2 = prod.nombreProductor;
                     fila.descripcion3 = string.Format("{0} {1} X {2}", prod.moneda, prod.precio, prod.tipoUnidad);
@@ -56,6 +56,13 @@ public class productoController:ApiController{
             {
                 fileData = binaryReader.ReadBytes(hfc[0].ContentLength);
             }
+
+            //codigo para pruebas
+            Logica.imagen logica = new Logica.imagen();
+            Dto.imagen dto = new Dto.imagen();
+            dto.id = 2;
+            dto.imag = fileData;
+            logica.Escribirimagen(dto);
 
             return "subio";
         }

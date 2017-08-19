@@ -1,7 +1,8 @@
-﻿    $(window).load(function () {
-        var map;
-        initMap();
-    });
+﻿$(window).load(function () {  
+    var map;
+    cargarZonas();
+    initMap();
+});
     function initMap() {
         map = new google.maps.Map(document.getElementById('googleMap'), {
             center: { lat: -34.7644421, lng: -55.7793048 },
@@ -33,4 +34,18 @@
             strokeOpacity: 0.6,
             strokeWeight: 6
         });
+    }
+
+    function cargarZonas() {
+        var llamadaAjax = new HAjax();
+        llamadaAjax.url = '/Maestros/Zonas';
+        llamadaAjax.method = 'GET';
+        llamadaAjax.data = {}
+        llamadaAjax.success = function (data) {
+            cargarCombo('cmbZona', data,'<option value="1">Estas en?</option>');
+            
+        }
+
+        llamadaAjax.llamar();
+
     }

@@ -23,6 +23,6 @@ namespace Persistencia.Modelo
         public Nullable<int> codigoTipoUnidad { get; set; }
         public string textoTipoUnidad { get; set; }
         public string nombreProductor { get; set; }
-        public string imagen { get; set; }
+        public byte[] imagen { get; set; }
     }
 }

@@ -70,7 +70,7 @@
   </Function>
   <Function Name="imagenGuardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="int" Mode="In" />
-    <Parameter Name="imagen" Type="varchar" Mode="In" />
+    <Parameter Name="imagen" Type="varbinary(max)" Mode="In" />
   </Function>
   <Function Name="imagenLeer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="int" Mode="In" />

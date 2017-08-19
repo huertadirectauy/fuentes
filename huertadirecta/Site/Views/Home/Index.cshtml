@@ -1,13 +1,39 @@
 ﻿<head>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/Inicio/Inicio.js"></script>
-
 </head>
 
     <div class="row" style="padding:0px;margin:0px;">
-        <div style="width:100%;min-height:400px;margin-bottom:1%;padding-top:0px;margin-top:0%;margin-left:1%;margin-right:1%;padding:0px;background-repeat:no-repeat;background-image:url('/Content/imgHuerta.jpg');opacity: 0.8;">
-            <h1 class="hwhite">HUERTA DIRECTA</h1>
+        <div id="wrap_video" style="width:100%;height:100%;z-index:1;">
+            <video id="vid" autoplay loop="loop" muted="true" style="width:100%;height:100%;">
+                <source src="http://www.luraki.com/assets/imgs/luraki2.mp4" type="video/mp4">
+            </video>
         </div>
 
-        <div id="googleMap" style="width:100%;height:150px;"></div>
+        
+    </div>
+
+   <form class="form-horizontal" style="position:absolute;z-index:2;top:15%;width:100%;">
+    <div style="margin-left:20%";>
+        <div>
+            <div class="row">
+                <div class="form-group">
+                    <!-- <label class="col-md-10 control-label form-control big-form-control" for="txtNombreProducto">Que estas buscando?</label>-->
+                    <div class="col-md-10">
+                        <input type="text" id="txtNombreProducto" class="form-control big-form-control" placeholder ="Que estas buscando?" />
+                        <select id="cmbZona" class="form-control big-form-control" style="color:gray;" placeholder="Estas en?"></select>
+                        <input type="button" id="btnBuscar" value="Buscar" class="btn big-button" />
+                    </div>
+                </div>
+            </div>     
+        </div>
+
+        
+    </div>
+</form>
+
+<div id="googleMap" style="position:absolute;z-index:2;top:20%;left:20.5%;width:57.5%;height:200px;border:1px solid gray; border-radius: 25px;"></div>
+
+    <div class="row" style="padding:0px;margin-left:10%;margin-right:10%;margin-top:3%;">
+        
     </div>

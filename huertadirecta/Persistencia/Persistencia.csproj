@@ -122,10 +122,10 @@
     <Compile Include="Modelo\imagenGuardar_Result.cs">
       <DependentUpon>HuertaDirecta.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\imagenLeer_Result.cs">
+    <Compile Include="Modelo\imagenGuardar_Result1.cs">
       <DependentUpon>HuertaDirecta.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\lisatadoProductos_Result.cs">
+    <Compile Include="Modelo\imagenLeer_Result.cs">
       <DependentUpon>HuertaDirecta.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\listadoProductos_Result.cs">
